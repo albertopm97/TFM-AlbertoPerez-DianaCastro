@@ -32,7 +32,7 @@ public class AutoAim : MonoBehaviour
             }
         }
 
+        //Dibujamos una linea que une al jugador con el enemigo mas cercano solo para debug
         Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
-        print(closestEnemy.name);
     }
 }

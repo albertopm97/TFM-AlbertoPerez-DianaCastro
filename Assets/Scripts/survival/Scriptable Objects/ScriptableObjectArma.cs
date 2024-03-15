@@ -29,6 +29,7 @@ public class ScriptableObjectArma : ScriptableObject
     int perforacion;
     public int Perforacion { get => perforacion; private set => perforacion = value; }
 
+    /*
     [SerializeField]
     int nivel;
     public int Nivel { get => nivel; private set => nivel = value; }
@@ -47,5 +48,5 @@ public class ScriptableObjectArma : ScriptableObject
 
     [SerializeField]
     Sprite icono;
-    public Sprite Icono { get => icono; private set => icono = value; }
+    public Sprite Icono { get => icono; private set => icono = value; }*/
 }

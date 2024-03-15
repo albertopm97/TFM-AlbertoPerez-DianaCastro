@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0a85b5d491ce1429d50c245cf00053, type: 3}
+  m_Name: Bullet
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8514160049012232442, guid: 6eb6a16fe22776a40842fc11a4b680eb, type: 3}
+  damage: 5
+  rapidez: 7
+  enfriamiento: 5
+  perforacion: 1
