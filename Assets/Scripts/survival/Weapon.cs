@@ -110,9 +110,14 @@ public class Weapon : MonoBehaviour
             }
         }
 
-        targetPos = closestEnemy.transform;
+        //Comprobamos que haya enemigos actualmente en escena
+        if(closestEnemy != null)
+        {
+            targetPos = closestEnemy.transform;
 
-        //Dibujamos una linea que une al jugador con el enemigo mas cercano solo para debug
-        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+            //Dibujamos una linea que une al jugador con el enemigo mas cercano solo para debug
+            Debug.DrawLine(this.transform.position, closestEnemy.transform.position); 
+        }
+        
     }
 }
