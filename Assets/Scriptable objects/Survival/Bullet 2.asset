@@ -15,5 +15,5 @@ MonoBehaviour:
   prefab: {fileID: 8152141523596248592, guid: bf2cadd25eae4eb48bf7ba7780fadda9, type: 3}
   damage: 5
   rapidez: 10
-  enfriamiento: 5
+  enfriamiento: 2
   perforacion: 1
