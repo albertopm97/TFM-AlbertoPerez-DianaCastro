@@ -40,7 +40,7 @@ public class BaseBullet : MonoBehaviour
         rb.AddForce(shootDir * rapidez, ForceMode2D.Impulse);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         Enemy enemy = collision.GetComponent<Enemy>();
 
@@ -49,6 +49,6 @@ public class BaseBullet : MonoBehaviour
             print("Hit en objetivo: " + enemy.gameObject.name);
             Destroy(gameObject);
         }
-    }
+    }*/
 }
 

@@ -6,7 +6,20 @@ public class Weapon : MonoBehaviour
 {
     public ScriptableObjectArma weaponStats;
 
+    [Header("Prefabs niveles de ataque")]
+    public GameObject atack2;
+    public GameObject atack3;
+    public GameObject atack4;
+    public GameObject atack5;
+
+    //Estadisticas necesarias
+    public int numProjectiles;
+    public int piercingActual;
+
+    //Para enfriamiento
     private float cdActual;
+
+    //Para calculo de direccion
     private Transform targetPos;
     protected Vector3 shootDir;
 
@@ -14,7 +27,10 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Inicializaciones de variables
         cdActual = weaponStats.Enfriamiento;
+        numProjectiles = weaponStats.NumProject;
+        piercingActual = weaponStats.Perforacion;
     }
 
     // Update is called once per frame
@@ -35,14 +51,41 @@ public class Weapon : MonoBehaviour
 
     void PlayerShoot()
     {
-        GameObject aux = Instantiate(weaponStats.Prefab, this.gameObject.transform.position, Quaternion.identity);
+        GameObject intantiatePrefab;
+        switch (numProjectiles)
+        {
+            case 1:
+                intantiatePrefab = weaponStats.Prefab;
+                break;
+
+            case 2:
+                intantiatePrefab = atack2;
+                break;
+
+            case 3:
+                intantiatePrefab = atack3;
+                break;
+
+            case 4:
+                intantiatePrefab = atack4;
+                break;
+
+            case 5:
+                intantiatePrefab = atack5;
+                break;
+
+            default:
+                intantiatePrefab = weaponStats.Prefab;
+                break;
+        }
+        GameObject aux = Instantiate(intantiatePrefab, this.gameObject.transform.position, Quaternion.identity);
          
         //Calculamos la direccion del disparo
         shootDir = (targetPos.transform.position - this.transform.position).normalized;
 
         BaseBullet bullet = aux.GetComponent<BaseBullet>();
 
-        bullet.initialize(shootDir, weaponStats.Rapidez);
+        bullet.initialize(shootDir, weaponStats.Rapidez); 
     }
 
     void findClosestEnemy()

@@ -629,7 +629,7 @@ Transform:
   m_GameObject: {fileID: 944321075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.785, y: -1.444, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -773,7 +773,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f1f99467bc219f46a2f05dcd1733fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponStats: {fileID: 11400000, guid: 65decdaa03d6483479c09d8e097198aa, type: 2}
+  weaponStats: {fileID: 11400000, guid: 4ba70ef4189755047b37e3a28bddc3a5, type: 2}
+  atack2: {fileID: 4943200807927871350, guid: fdc37690b7c85944f8f67defea899565, type: 3}
+  atack3: {fileID: 4943200807927871350, guid: cdb534b3e9a428e45827b91c39cd067d, type: 3}
+  atack4: {fileID: 4943200807927871350, guid: 7d298b96942fba74c9adb5e94cce0fff, type: 3}
+  atack5: {fileID: 4943200807927871350, guid: 25db778c8157d2247af0ba47b7b47e76, type: 3}
+  numProjectiles: 0
+  piercingActual: 0
 --- !u!1 &972927926
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,10 @@ public class ScriptableObjectArma : ScriptableObject
     public float Damage { get => damage; private set => damage = value; }
 
     [SerializeField]
+    int numProject;
+    public int NumProject { get => numProject; private set => numProject = value; }
+
+    [SerializeField]
     float rapidez;
     public float Rapidez { get => rapidez; private set => rapidez = value; }
 

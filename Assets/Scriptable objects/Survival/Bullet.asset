@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0a85b5d491ce1429d50c245cf00053, type: 3}
   m_Name: Bullet
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8514160049012232442, guid: 6eb6a16fe22776a40842fc11a4b680eb, type: 3}
+  prefab: {fileID: 5169744372793738897, guid: ae8f98b8249f7db48a89a23d7956705a, type: 3}
   damage: 5
+  numProject: 0
   rapidez: 10
   enfriamiento: 5
   perforacion: 1
