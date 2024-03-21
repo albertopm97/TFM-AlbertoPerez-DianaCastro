@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e911c78ff534cde4ab6f54574fa496e1, type: 3}
   m_Name: Enemy1
   m_EditorClassIdentifier: 
-  rapidez: 0
-  vidaMaxima: 0
-  damage: 0
+  rapidez: 5
+  vidaMaxima: 10
+  damage: 1
