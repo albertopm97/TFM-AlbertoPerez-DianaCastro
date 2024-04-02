@@ -30,7 +30,7 @@ public class EstadisticasEnemigos : MonoBehaviour
         //jugador = FindObjectOfType<EstadisticasJugador>().transform;
 
         //Corrección de bug
-        jugador = gameObject.GetComponent<MovimientoEnemigos>().jugador;
+        jugador = gameObject.GetComponent<ComporamientoEnemigo>().jugador;
     }
 
     void Update()
@@ -83,6 +83,10 @@ public class EstadisticasEnemigos : MonoBehaviour
     void recolocarEnemigo()
     {
         SpawnerEnemigos spawner = FindObjectOfType<SpawnerEnemigos>();
-        transform.position = jugador.position + spawner.puntosSpawn[Random.Range(0, spawner.puntosSpawn.Count - 1)].position;
+        if(spawner != null)
+        {
+            transform.position = jugador.position + spawner.puntosSpawn[Random.Range(0, spawner.puntosSpawn.Count - 1)].position;
+        }
+        
     }
 }

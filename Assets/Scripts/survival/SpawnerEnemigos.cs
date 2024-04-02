@@ -117,8 +117,8 @@ public class SpawnerEnemigos : MonoBehaviour
                         return;
                     }
 
-                    //Asignamos el jugador correspondiente al spawner
-                    grupo.prefabEnemigo.GetComponent<MovimientoEnemigos>().jugador = jugador;
+                    //Asignamos el jugador correspondiente al spawner - Ahora se hace directamente en el script del enemigo correspondiente
+                    //grupo.prefabEnemigo.GetComponent<ComporamientoEnemigo>().jugador = jugador;
 
                     //elegimos un punto al azar de la lista de puntos y spawneamos al enemigo ahí
                     Instantiate(grupo.prefabEnemigo, jugador.position + puntosSpawn[Random.Range(0, puntosSpawn.Count - 1)].position, Quaternion.identity);
