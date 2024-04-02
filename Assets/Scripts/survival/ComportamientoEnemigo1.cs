@@ -16,6 +16,5 @@ public class ComportamientoEnemigo1 : ComporamientoEnemigo
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, jugador.transform.position, enemigo.rapidezActual * Time.deltaTime);
-        print(jugador.transform.position);
     }
 }
