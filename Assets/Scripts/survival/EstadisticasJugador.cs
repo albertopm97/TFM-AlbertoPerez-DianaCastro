@@ -170,11 +170,11 @@ public class EstadisticasJugador : MonoBehaviour
             //Reiniciamos el temporizador de I-frames
             temporizadorInv = duracionInv;
             esInvulnerable = true;
-            sonidoHit.Play();
+            //sonidoHit.Play();
 
             if (vidaActual <= 0)
             {
-                sonidoMuerte.Play();
+                //sonidoMuerte.Play();
                 Morir();
             }
 

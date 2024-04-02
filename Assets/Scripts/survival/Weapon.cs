@@ -42,7 +42,12 @@ public class Weapon : MonoBehaviour
 
         if (cdActual <= 0)
         {
-            PlayerShoot();
+            //Disparamos si hay algun enemigo activo en la escena
+            if(targetPos != null)
+            {
+                PlayerShoot();
+            }
+            
 
             cdActual = weaponStats.Enfriamiento;
         }
@@ -96,7 +101,7 @@ public class Weapon : MonoBehaviour
 
         Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
 
-        print("Tamaño array enemigos: " + enemies.Length);
+        //print("Tamaño array enemigos: " + enemies.Length);
 
         foreach (Enemy e in enemies)
         {
