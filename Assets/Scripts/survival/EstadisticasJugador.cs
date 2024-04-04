@@ -22,6 +22,8 @@ public class EstadisticasJugador : MonoBehaviour
     [HideInInspector]
     public float imanObjetosActual;
 
+    public int monedas;
+
     /*Gestion de experiencia
     [Header("Experiencia/Nivel")]
     public int experiencia = 0;
@@ -112,6 +114,7 @@ public class EstadisticasJugador : MonoBehaviour
         poderActual = infoPersonaje.Poder;
         rapidezProyectilActual = infoPersonaje.RapidezProyectil;
         imanObjetosActual = infoPersonaje.ImanObjetos;
+        monedas = 0;
 
         /*inventario = GetComponent<GestorInventario>();
 
@@ -159,6 +162,11 @@ public class EstadisticasJugador : MonoBehaviour
             GameManager.instancia.inicioMenuMejora();
         }
     } */
+
+    public void sumarMonedas(int cantidad)
+    {
+        monedas += cantidad;
+    }
 
     public void RecibirAtaque(float dmg)
     {
@@ -272,4 +280,12 @@ public class EstadisticasJugador : MonoBehaviour
         ranuraPasivo++;
     }
     */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out IColeccionable item))
+        {
+            item.coger();
+        }
+    }
 }

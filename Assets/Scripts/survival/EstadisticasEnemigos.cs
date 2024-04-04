@@ -17,6 +17,9 @@ public class EstadisticasEnemigos : MonoBehaviour
     public float distanciaLimite = 20f;
     Transform jugador;
 
+    //Particulas para la muerte
+    public GameObject blood;
+
     //Funcion llamada al cargar el script
     void Awake()
     {
@@ -56,6 +59,8 @@ public class EstadisticasEnemigos : MonoBehaviour
     public void matarEnemigo()
     {
         Destroy(gameObject);
+
+        Instantiate(blood, transform.position, Quaternion.identity);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     //Estadisticas necesarias
     public int numProjectiles;
     public int piercingActual;
+    public float damageActual;
 
     //Para enfriamiento
     private float cdActual;
@@ -31,6 +32,7 @@ public class Weapon : MonoBehaviour
         cdActual = weaponStats.Enfriamiento;
         numProjectiles = weaponStats.NumProject;
         piercingActual = weaponStats.Perforacion;
+        damageActual = weaponStats.Damage;
     }
 
     // Update is called once per frame
