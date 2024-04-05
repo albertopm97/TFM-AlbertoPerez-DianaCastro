@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8013933262088757351}
   - component: {fileID: 2270645428255529641}
   - component: {fileID: 4955679994014770069}
+  - component: {fileID: -3722862939217366838}
   m_Layer: 0
   m_Name: Enemigo3
   m_TagString: Enemy
@@ -162,6 +163,7 @@ MonoBehaviour:
   vidaActual: 20
   damageActual: 6
   distanciaLimite: 20
+  blood: {fileID: 0}
 --- !u!114 &4955679994014770069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,3 +179,26 @@ MonoBehaviour:
   enemigo: {fileID: 2270645428255529641}
   jugador: {fileID: 0}
   distanciaCarga: 5
+  fuerzaCarga: 0
+  direccionCarga: {x: 0, y: 0}
+--- !u!95 &-3722862939217366838
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606261006888036036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c81bc82977920ce40aefd7a7c2bce23a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

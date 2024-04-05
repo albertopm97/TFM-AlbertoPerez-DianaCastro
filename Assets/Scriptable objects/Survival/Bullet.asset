@@ -16,5 +16,5 @@ MonoBehaviour:
   damage: 5
   numProject: 0
   rapidez: 10
-  enfriamiento: 5
+  enfriamiento: 1
   perforacion: 1
