@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public enum estadoDelJuego
     {
-        Gameplay, Pausa, GameOver, SubirNivel
+        Gameplay, Pausa, GameOver, Tienda
     }
 
     public estadoDelJuego estadoDelJuegoActual;
@@ -24,14 +25,14 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject menuPausa;
     public GameObject menuFinJuego;
-    public GameObject menuSubirNivel;
+    public GameObject menuTienda;
 
     [Header("Cronometro")]
     float tiempoCrono;
-    public Text tiempoCronoUI;
+    public TextMeshProUGUI tiempoCronoUI;
 
     [Header("Sonido")]
-    public AudioSource loopJuego;
+    //public AudioSource loopJuego;
 
     public GameObject referenciaJugador;
 
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
         }
 
         desactivarMenus();
+        tiempoCrono = 5f;
     }
 
     void Update()
@@ -59,16 +61,16 @@ public class GameManager : MonoBehaviour
                 
                 comprobadorPausa();
                 actualizarCrono();
-                if (!loopJuego.isPlaying)
+                /*if (!loopJuego.isPlaying)
                 {
                     loopJuego.Play();
-                }
+                }*/
                 break;
 
             case estadoDelJuego.Pausa:
                 
                 comprobadorPausa();
-                loopJuego.Pause();
+                //loopJuego.Pause();
                 break;
 
             case estadoDelJuego.GameOver:
@@ -80,18 +82,18 @@ public class GameManager : MonoBehaviour
                     Debug.Log("FIN DEL JUEGO");
                     tiempoCronoUI.text = "";
                     mostrarPantallaFinal();
-                    loopJuego.Stop();
+                    //loopJuego.Stop();
                 }
                 break;
 
-            case estadoDelJuego.SubirNivel:
+            case estadoDelJuego.Tienda:
 
                 if (!mejorandoEquipamiento)
                 {
                     mejorandoEquipamiento = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Jugador mejorando equipo");
-                    menuSubirNivel.SetActive(true);
+                    Debug.Log("Jugador usando la tienda");
+                    menuTienda.SetActive(true);
                 }
                 break;
 
@@ -143,9 +145,9 @@ public class GameManager : MonoBehaviour
 
     void desactivarMenus()
     {
-        menuPausa.SetActive(false);
-        menuFinJuego.SetActive(false);
-        menuSubirNivel.SetActive(false);
+        //menuPausa.SetActive(false);
+        //menuFinJuego.SetActive(false);
+        //menuTienda.SetActive(false);
     }
 
     public void gameOver()
@@ -155,14 +157,20 @@ public class GameManager : MonoBehaviour
 
     public void mostrarPantallaFinal() 
     {
-        menuFinJuego.SetActive(true);
+        // menuFinJuego.SetActive(true);
     }
 
     void actualizarCrono()
     {
-        tiempoCrono += Time.deltaTime;
+        tiempoCrono -= Time.deltaTime;
 
         actualizarCronoUI();
+
+        if(tiempoCrono <= 0)
+        {
+            inicioMenuTienda();
+            tiempoCrono = 30;
+        }
     }
 
     void actualizarCronoUI()
@@ -170,19 +178,28 @@ public class GameManager : MonoBehaviour
         int minutos = Mathf.FloorToInt(tiempoCrono/60);
         int segundos = Mathf.FloorToInt(tiempoCrono % 60);
 
-        tiempoCronoUI.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        //tiempoCronoUI.text = string.Format("{0:00}:{1:00}", minutos, segundos);
+        tiempoCronoUI.text = string.Format("{00}", segundos);
     }
 
+    void inicioMenuTienda()
+    {
+        cambiarEstadoActual(estadoDelJuego.Tienda);
+        UI_Shop scriptTienda = menuTienda.GetComponent<UI_Shop>();
+        scriptTienda.generarMenu();
+    }
+
+    /*
     public void inicioMenuMejora()
     {
-        cambiarEstadoActual(estadoDelJuego.SubirNivel);
+        cambiarEstadoActual(estadoDelJuego.Tienda);
         referenciaJugador.SendMessage("EliminarOpcionesYAplicarMejoras");
     }
     public void finMenuMejora()
     {
         mejorandoEquipamiento = false;
         Time.timeScale = 1f;
-        menuSubirNivel.SetActive(false);
+        menuTienda.SetActive(false);
         cambiarEstadoActual(estadoDelJuego.Gameplay);
-    }
+    }*/
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EstadisticasJugador : MonoBehaviour
+public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 {
     [Header("Clase por defecto")]
     public ScriptableObjectPersonaje infoPJDefecto;
@@ -126,43 +126,6 @@ public class EstadisticasJugador : MonoBehaviour
         }*/
     }
 
-    /* GESTION DE EXPERIENCIA
-    public void incrementarExperiencia(int cantidad)
-    {
-        experiencia += cantidad;
-        sonidoMoneda.Play();
-        comprobarLvUp();
-    }
-
-    void comprobarLvUp()
-    {
-        if(experiencia >= maxExperiencia)
-        {
-            sonidoLvUp.Play();
-            nivel++;
-            Debug.Log("LV UP");
-            experiencia -= maxExperiencia;
-            
-
-            int incrementoMaxExperiencia = 0;
-
-            //iteramos por los distintos rangos de nivel hasta encontrar en el que esta el jugador, tomando el incremento de nivel correspondiente
-            foreach(RangoNivel r in rangosNivel)
-            {
-                if(nivel >= r.nivelInicial && nivel <= r.nivelFinal)
-                {
-                    incrementoMaxExperiencia = r.incrementoMaxExperiencia;
-
-                    //no es que sea la forma mas bonita, pero en juegos hay que optimizar al maximo, si encontramos el rango correspondiente forzamos salida del bucle
-                    break;
-                }
-            }
-            //aplicamos el incremento
-            maxExperiencia += incrementoMaxExperiencia;
-            GameManager.instancia.inicioMenuMejora();
-        }
-    } */
-
     public void sumarMonedas(int cantidad)
     {
         monedas += cantidad;
@@ -244,42 +207,35 @@ public class EstadisticasJugador : MonoBehaviour
         }
     }
 
-    /*
-
-    public void equiparNuevaArma(GameObject arma)
+    public void mejoraComprada(Mejoras.tipoMejora tipoMejora, int rareza)
     {
-        //Si el inventario esta lleno no tomamos mas armas
-        if(ranuraArma >= inventario.ranurasArmas.Count - 1)
-        {
-            Debug.LogError("Inventario de armas lleno");
-            return;
+        string cadena = "Comprada mejora de " + tipoMejora.ToString() + " de rareza ";
+
+        switch (rareza) 
+        { 
+            case 0:
+                cadena += "común";
+                break;
+
+            case 1:
+                cadena += "poco común";
+                break;
+
+            case 2:
+                cadena += "épica";
+                break;
+
+            case 3:
+                cadena += "legendaria";
+                break;
+
+            default:
+                cadena += "común";
+                    break;
         }
 
-        //Arma a equipar
-        GameObject nuevaArma = Instantiate(arma, transform.position, Quaternion.identity);
-        nuevaArma.transform.SetParent(transform); //deja el arma inicial como hijo del jugador
-        inventario.equiparArma(ranuraArma, nuevaArma.GetComponent<ControladorArmas>());
-
-        ranuraArma++;
+        Debug.Log(cadena);
     }
-
-    public void equiparNuevoPasivo(GameObject pasivo)
-    {
-        //Si el inventario esta lleno no tomamos mas armas
-        if (ranuraPasivo >= inventario.ranurasObjetos.Count -1)
-        {
-            Debug.LogError("Inventario de pasivos lleno");
-            return;
-        }
-
-        //Objeto a equipar
-        GameObject nuevoObjeto = Instantiate(pasivo, transform.position, Quaternion.identity);
-        nuevoObjeto.transform.SetParent(transform); //deja el arma inicial como hijo del jugador
-        inventario.equiparPasivo(ranuraPasivo, nuevoObjeto.GetComponent<ObjetoPasivo>());
-
-        ranuraPasivo++;
-    }
-    */
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
