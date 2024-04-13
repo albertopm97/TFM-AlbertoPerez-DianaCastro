@@ -26,9 +26,10 @@ public class GameManager : MonoBehaviour
     public GameObject menuPausa;
     public GameObject menuFinJuego;
     public GameObject menuTienda;
+    public GameObject botonesTienda;
 
     [Header("Cronometro")]
-    float tiempoCrono;
+    public float tiempoCrono;
     public TextMeshProUGUI tiempoCronoUI;
 
     [Header("Sonido")]
@@ -50,7 +51,6 @@ public class GameManager : MonoBehaviour
         }
 
         desactivarMenus();
-        tiempoCrono = 5f;
     }
 
     void Update()
@@ -187,6 +187,17 @@ public class GameManager : MonoBehaviour
         cambiarEstadoActual(estadoDelJuego.Tienda);
         UI_Shop scriptTienda = menuTienda.GetComponent<UI_Shop>();
         scriptTienda.generarMenu();
+        botonesTienda.SetActive(true);
+    }
+
+    public void finMenuTienda()
+    {
+        cambiarEstadoActual(estadoDelJuego.Gameplay);
+        UI_Shop scriptTienda = menuTienda.GetComponent<UI_Shop>();
+        scriptTienda.desactivarMenu();
+        mejorandoEquipamiento = false;
+        botonesTienda.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     /*

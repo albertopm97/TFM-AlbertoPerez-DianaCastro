@@ -33,7 +33,7 @@ public class EstadisticasEnemigos : MonoBehaviour
         //jugador = FindObjectOfType<EstadisticasJugador>().transform;
 
         //Corrección de bug
-        jugador = gameObject.GetComponent<ComporamientoEnemigo>().jugador;
+        jugador = FindObjectOfType<EstadisticasJugador>().transform;
     }
 
     void Update()

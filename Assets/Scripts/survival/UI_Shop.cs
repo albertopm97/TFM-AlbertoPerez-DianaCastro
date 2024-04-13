@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class UI_Shop : MonoBehaviour
 {
+    List<Transform> listaItemsTienda;
     private Sprite iconoMonedas;
     private Transform container;
     private Transform shopItemTemplate;
@@ -18,6 +19,7 @@ public class UI_Shop : MonoBehaviour
         container = transform.Find("container");
         shopItemTemplate = container.Find("ShopItem");
         customer = FindObjectOfType<EstadisticasJugador>();
+        listaItemsTienda = new List<Transform>();
         //shopItemTemplate.gameObject.SetActive(false);
     }
 
@@ -37,6 +39,7 @@ public class UI_Shop : MonoBehaviour
     private void crearBotonInterfaz(Mejoras.tipoMejora tipoMejora, Sprite icono, string nombre, int coste, int indicePosicion, int rareza)
     {
         Transform itemTransform = Instantiate(shopItemTemplate, container);
+        listaItemsTienda.Add(itemTransform);
         RectTransform itemRectTransform = itemTransform.GetComponent<RectTransform>();
 
         float ItemHeight = 150f;
@@ -85,11 +88,22 @@ public class UI_Shop : MonoBehaviour
             tryBuyItem(tipoMejora, rareza);
 
             //gameObject.GetComponent<Button_UI>()
+            itemTransform.GetComponent<Button_UI>().ClickFunc = () => { };
+
+            itemTransform.Find("Nombre").GetComponent<TextMeshProUGUI>().SetText("Agotado!");
+
+            colorFondo = new Color(0.431f, 0.431f, 0.431f, 1);
+
+            itemTransform.Find("Background").GetComponent<Image>().color = colorFondo;
         };
+
+        itemTransform.gameObject.SetActive(true);
     }
 
     public void generarMenu()
     {
+        desactivarMenu();
+
         Mejoras.tipoMejora tipoMejora;
         List<Mejoras.tipoMejora> mejorasDisponibles = new List<Mejoras.tipoMejora>();
 
@@ -149,6 +163,15 @@ public class UI_Shop : MonoBehaviour
          * crearBotonInterfaz(Mejoras.getSprite(Mejoras.tipoMejora.Salud), "Salud máxima", Mejoras.calcularCoste(Mejoras.tipoMejora.Salud, 2), 0, 1);
          */
         shopItemTemplate.gameObject.SetActive(false);
+    }
+
+    public void desactivarMenu()
+    {
+        foreach(Transform t in listaItemsTienda)
+        { 
+            if(t != null)
+                Destroy(t.gameObject);
+        }
     }
 
     void tryBuyItem(Mejoras.tipoMejora tipoMejora, int rareza)
