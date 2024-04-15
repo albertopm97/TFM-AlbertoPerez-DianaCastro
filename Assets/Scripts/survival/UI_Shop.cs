@@ -13,9 +13,11 @@ public class UI_Shop : MonoBehaviour
     private Transform shopItemTemplate;
 
     private IShopCustomer customer;
+    private Weapon weapon;
 
     private void Awake()
     {
+        weapon = FindObjectOfType<Weapon>();
         container = transform.Find("container");
         shopItemTemplate = container.Find("ShopItem");
         customer = FindObjectOfType<EstadisticasJugador>();
@@ -113,7 +115,18 @@ public class UI_Shop : MonoBehaviour
             mejorasDisponibles.Add((Mejoras.tipoMejora)i);
         }
 
-        //  HAY QUE ELEGIR 4 MEJORAS DISTINTAS (COMO SABEMOS CUALES HEMOS COGIDO YA? POSIBLEMENTE LISTA DE MEJORAS ELEGIDAS
+        //Si estamos en el cup de alguna estadistica, sacamos sus mejoras de la pool
+        if(weapon.numProyectilesActual >= 5) 
+        { 
+            mejorasDisponibles.Remove(Mejoras.tipoMejora.numProyectiles);
+        }
+
+        if (weapon.velocidadAtaqueActual <= 0.2f)
+        {
+            mejorasDisponibles.Remove(Mejoras.tipoMejora.velocidadAtaque);
+        }
+
+        //  HAY QUE ELEGIR 4 MEJORAS DISTINTAS 
         for (int i = 0; i < 4; i++)
         {
             //Elegimos una mejora y la sacamos de la lista

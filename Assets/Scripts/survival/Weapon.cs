@@ -16,6 +16,10 @@ public class Weapon : MonoBehaviour
     public int numProjectiles;
     public int piercingActual;
     public float damageActual;
+    public float velocidadAtaqueActual;
+    public int numProyectilesActual;
+    public float velocidadProyectilActual;
+    public float poderActual;
 
     //Para enfriamiento
     private float cdActual;
@@ -33,6 +37,10 @@ public class Weapon : MonoBehaviour
         numProjectiles = weaponStats.NumProject;
         piercingActual = weaponStats.Perforacion;
         damageActual = weaponStats.Damage;
+        velocidadAtaqueActual = weaponStats.Enfriamiento;
+        velocidadProyectilActual = weaponStats.Rapidez;
+        numProyectilesActual = 1;
+        poderActual = 1;
     }
 
     // Update is called once per frame
@@ -51,9 +59,19 @@ public class Weapon : MonoBehaviour
             }
             
 
-            cdActual = weaponStats.Enfriamiento;
+            cdActual = velocidadAtaqueActual;
         }
-        
+
+        if(numProyectilesActual > 5) 
+        {
+            numProyectilesActual = 5;
+        }
+
+        if (velocidadAtaqueActual < 0.2f)
+        {
+            velocidadAtaqueActual = 0.2f;
+        }
+
     }
 
     void PlayerShoot()

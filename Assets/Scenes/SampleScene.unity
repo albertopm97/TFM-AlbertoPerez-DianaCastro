@@ -1605,7 +1605,7 @@ MonoBehaviour:
   menuFinJuego: {fileID: 0}
   menuTienda: {fileID: 630718293}
   botonesTienda: {fileID: 505942709}
-  tiempoCrono: 5
+  tiempoCrono: 30
   tiempoCronoUI: {fileID: 1564136676}
   referenciaJugador: {fileID: 0}
 --- !u!4 &672165600
@@ -2112,6 +2112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoPJDefecto: {fileID: 11400000, guid: 9e849eb08bd3e974199a9446daa13ee8, type: 2}
+  vidaMaximaActual: 0
   vidaActual: 0
   recuperacionActual: 0
   velocidadMovimientoActual: 0
@@ -2327,6 +2328,10 @@ MonoBehaviour:
   numProjectiles: 0
   piercingActual: 0
   damageActual: 0
+  velocidadAtaqueActual: 0
+  numProyectilesActual: 0
+  velocidadProyectilActual: 0
+  poderActual: 0
 --- !u!1 &972420759
 GameObject:
   m_ObjectHideFlags: 0

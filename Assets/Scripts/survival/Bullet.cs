@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     {
         weapon = FindObjectOfType<Weapon>();
         piercing = weapon.piercingActual;
-        dmg = weapon.damageActual;
+        dmg = weapon.damageActual * weapon.poderActual;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 {
+    private Weapon referenciaAtaqueJugador;
+
     [Header("Clase por defecto")]
     public ScriptableObjectPersonaje infoPJDefecto;
     ScriptableObjectPersonaje infoPersonaje;
 
     //Estadisticas generales actuales
+    [HideInInspector]
+    public float vidaMaximaActual;
+    
     public float vidaActual;
     [HideInInspector]
     public float recuperacionActual;
@@ -82,6 +87,8 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         //maxExperiencia = rangosNivel[0].incrementoMaxExperiencia;
 
         actualizarBarraHP();
+
+        referenciaAtaqueJugador = gameObject.GetComponent<Weapon>();
     }
 
     void Update()
@@ -106,8 +113,8 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         {
             infoPersonaje = infoPJDefecto;
         }
-        
 
+        vidaMaximaActual = infoPersonaje.VidaMaxima;
         vidaActual = infoPersonaje.VidaMaxima;
         recuperacionActual = infoPersonaje.Recuperacion;
         velocidadMovimientoActual = infoPersonaje.VelocidadMovimiento;
@@ -143,7 +150,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
             esInvulnerable = true;
             //sonidoHit.Play();
 
-            if (vidaActual <= 0)
+            if (vidaMaximaActual <= 0)
             {
                 //sonidoMuerte.Play();
                 Morir();
@@ -155,7 +162,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 
     void actualizarBarraHP()
     {
-        barraHp.fillAmount = vidaActual / infoPersonaje.VidaMaxima;
+        barraHp.fillAmount = vidaActual / vidaMaximaActual;
     }
 
     /*void actualizarBarraExp()
@@ -174,15 +181,15 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     public void curar(float vidaACurar)
     {
         //Solo curar cuando se haya perdido vida
-        if(vidaActual < infoPersonaje.VidaMaxima)
+        if(vidaActual < vidaMaximaActual)
         {
             vidaActual += vidaACurar;
             Debug.Log("TE HAS CURADO");
 
             //Si al curar la vida sobrepasa el maximo, dejar el maximo en su lugar
-            if (vidaActual > infoPersonaje.VidaMaxima)
+            if (vidaActual > vidaMaximaActual)
             {
-                vidaActual = infoPersonaje.VidaMaxima;
+                vidaActual = vidaMaximaActual;
             }
 
             actualizarBarraHP();
@@ -192,15 +199,15 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     //La idea es que si te falta vida haya una curación pasiva en función del factor de recuperación
     void curaPasiva()
     {
-        if(vidaActual < infoPersonaje.VidaMaxima)
+        if(vidaActual < vidaMaximaActual)
         {
             vidaActual += recuperacionActual * Time.deltaTime;
 
             //Incluso con la comprobación anterior, a veces se pasa un poco de la vida maxima
             //Es necesaria una segunda comprobación para dejar aplicado el máximo
-            if(vidaActual > infoPersonaje.VidaMaxima)
+            if(vidaActual > vidaMaximaActual)
             {
-                vidaActual = infoPersonaje.VidaMaxima;
+                vidaActual = vidaMaximaActual;
             }
 
             actualizarBarraHP();
@@ -235,6 +242,120 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         }
 
         Debug.Log(cadena);
+
+
+        //Switch anidado para determinar como se aplica cada mejora con su correspondiente rareza
+        switch (tipoMejora)
+        {
+            default:
+            case Mejoras.tipoMejora.Salud:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: vidaMaximaActual += 5; break;
+                    case 1: vidaMaximaActual += 10; break;
+                    case 2: vidaMaximaActual += 15; break;
+                    case 3: vidaMaximaActual += 20; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.CuraPasiva:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: recuperacionActual += 1; break;
+                    case 1: recuperacionActual += 3; break;
+                    case 2: recuperacionActual += 5; break;
+                    case 3: recuperacionActual += 10; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.VelocidadMovimiento:
+
+                switch (rareza)
+                {
+                    default: 
+                    case 0: velocidadMovimientoActual += 1; break;
+                    case 1: velocidadMovimientoActual += 2; break;
+                    case 2: velocidadMovimientoActual += 3; break;
+                    case 3: velocidadMovimientoActual += 5; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.VelocidadProyectil:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.velocidadProyectilActual += 1; break;
+                    case 1: referenciaAtaqueJugador.velocidadProyectilActual += 2; break;
+                    case 2: referenciaAtaqueJugador.velocidadProyectilActual += 3; break;
+                    case 3: referenciaAtaqueJugador.velocidadProyectilActual += 5; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.Damage:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.damageActual += 1; break;
+                    case 1: referenciaAtaqueJugador.damageActual += 2; break;
+                    case 2: referenciaAtaqueJugador.damageActual += 3; break;
+                    case 3: referenciaAtaqueJugador.damageActual += 5; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.Poder:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.poderActual += 0.1f; break;
+                    case 1: referenciaAtaqueJugador.poderActual += 0.2f; break;
+                    case 2: referenciaAtaqueJugador.poderActual += 0.3f; break;
+                    case 3: referenciaAtaqueJugador.poderActual += 0.5f; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.numProyectiles:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.numProjectiles += 1; break;
+                    case 1: referenciaAtaqueJugador.numProjectiles += 2; break;
+                    case 2: referenciaAtaqueJugador.numProjectiles += 3; break;
+                    case 3: referenciaAtaqueJugador.numProjectiles += 4; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.velocidadAtaque:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.1f; break;
+                    case 1: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.2f; break;
+                    case 2: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.3f; break;
+                    case 3: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.5f; break;
+                }
+                break;
+
+            case Mejoras.tipoMejora.penetracion:
+
+                switch (rareza)
+                {
+                    default:
+                    case 0: referenciaAtaqueJugador.piercingActual += 1; break;
+                    case 1: referenciaAtaqueJugador.piercingActual += 2; break;
+                    case 2: referenciaAtaqueJugador.piercingActual += 3; break;
+                    case 3: referenciaAtaqueJugador.piercingActual += 4; break;
+                }
+                break;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
