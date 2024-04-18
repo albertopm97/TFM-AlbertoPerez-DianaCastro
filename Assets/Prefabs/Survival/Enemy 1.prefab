@@ -191,6 +191,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
+  - nombre: moneda3
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 20
+  - nombre: moneda2
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 40
   - nombre: moneda1
     itemPrefab: {fileID: 6135898768387338088, guid: ef3dea45be8692841836618959497483, type: 3}
     probabilidad: 100

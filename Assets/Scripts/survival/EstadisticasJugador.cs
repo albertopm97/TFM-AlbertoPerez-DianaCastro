@@ -358,6 +358,20 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         }
     }
 
+    public bool trySpendGoldAmount(int goldAmount)
+    {
+        if(monedas >= goldAmount)
+        {
+            monedas -= goldAmount;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out IColeccionable item))

@@ -11,9 +11,16 @@ public class UI_Shop : MonoBehaviour
     private Sprite iconoMonedas;
     private Transform container;
     private Transform shopItemTemplate;
+    public GameObject shopBackground;
 
     private IShopCustomer customer;
+    private EstadisticasJugador jugador;
     private Weapon weapon;
+
+    bool alertaDineroActiva;
+    public float tiempoAlertaMonedas;
+    float timerAlerta;
+    
 
     private void Awake()
     {
@@ -21,8 +28,12 @@ public class UI_Shop : MonoBehaviour
         container = transform.Find("container");
         shopItemTemplate = container.Find("ShopItem");
         customer = FindObjectOfType<EstadisticasJugador>();
+        jugador = FindObjectOfType<EstadisticasJugador>();
         listaItemsTienda = new List<Transform>();
         //shopItemTemplate.gameObject.SetActive(false);
+
+        alertaDineroActiva = false;
+        timerAlerta = tiempoAlertaMonedas;
     }
 
     private void Start()
@@ -36,7 +47,24 @@ public class UI_Shop : MonoBehaviour
 
         //generarMenu();
     }
-    
+
+    private void Update()
+    {
+        if(alertaDineroActiva)
+        {
+            timerAlerta -= Time.deltaTime;
+
+            if(timerAlerta <= 0)
+            {
+                TooltipScreenSpaceUI.hideTooltip_static();
+
+                alertaDineroActiva = false;
+
+                timerAlerta = tiempoAlertaMonedas;
+            }
+        }
+    }
+
 
     private void crearBotonInterfaz(Mejoras.tipoMejora tipoMejora, Sprite icono, string nombre, int coste, int indicePosicion, int rareza)
     {
@@ -87,16 +115,16 @@ public class UI_Shop : MonoBehaviour
         //Creamos el boton interactuable
         itemTransform.GetComponent<Button_UI>().ClickFunc = () =>
         {
-            tryBuyItem(tipoMejora, rareza);
+            tryBuyItem(tipoMejora, rareza, coste);
 
             //gameObject.GetComponent<Button_UI>()
-            itemTransform.GetComponent<Button_UI>().ClickFunc = () => { };
+            //itemTransform.GetComponent<Button_UI>().ClickFunc = () => { };
 
-            itemTransform.Find("Nombre").GetComponent<TextMeshProUGUI>().SetText("Agotado!");
+            //itemTransform.Find("Nombre").GetComponent<TextMeshProUGUI>().SetText("Agotado!");
 
-            colorFondo = new Color(0.431f, 0.431f, 0.431f, 1);
+            //colorFondo = new Color(0.431f, 0.431f, 0.431f, 1);
 
-            itemTransform.Find("Background").GetComponent<Image>().color = colorFondo;
+            //itemTransform.Find("Background").GetComponent<Image>().color = colorFondo;
         };
 
         itemTransform.gameObject.SetActive(true);
@@ -104,7 +132,9 @@ public class UI_Shop : MonoBehaviour
 
     public void generarMenu()
     {
+        
         desactivarMenu();
+        shopBackground.gameObject.SetActive(true);
 
         Mejoras.tipoMejora tipoMejora;
         List<Mejoras.tipoMejora> mejorasDisponibles = new List<Mejoras.tipoMejora>();
@@ -185,10 +215,37 @@ public class UI_Shop : MonoBehaviour
             if(t != null)
                 Destroy(t.gameObject);
         }
+
+        shopBackground.gameObject.SetActive(false);
     }
 
-    void tryBuyItem(Mejoras.tipoMejora tipoMejora, int rareza)
-    { 
-        customer.mejoraComprada(tipoMejora, rareza);
+    void tryBuyItem(Mejoras.tipoMejora tipoMejora, int rareza, int coste)
+    {
+        //Si el cliente tiene suficientes monedas, compra la mejora
+        if (customer.trySpendGoldAmount(coste))
+        {
+            customer.mejoraComprada(tipoMejora, rareza);
+        }
+        else
+        {
+            //Activamos tooltip y su bool correspondiente
+            TooltipScreenSpaceUI.showTooltip_static("No tienes suficientes monedas!!");
+            alertaDineroActiva = true;
+        }
+        
+    }
+
+    public void recargarTienda()
+    {
+        if(jugador.monedas >= 10)
+        {
+            jugador.monedas -= 10;
+            generarMenu();
+        }
+        else
+        {
+            TooltipScreenSpaceUI.showTooltip_static("No tienes suficientes monedas!!");
+            alertaDineroActiva = true;
+        }
     }
 }

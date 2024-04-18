@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2270645428255529641}
   - component: {fileID: 4955679994014770069}
   - component: {fileID: -3722862939217366838}
+  - component: {fileID: -509427874562136958}
   m_Layer: 0
   m_Name: Enemigo3
   m_TagString: Enemy
@@ -202,3 +203,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-509427874562136958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606261006888036036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3e871b4770f2f42bdc7377038bf597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - nombre: moneda3
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 20
+  - nombre: moneda2
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 40
+  - nombre: moneda1
+    itemPrefab: {fileID: 6135898768387338088, guid: ef3dea45be8692841836618959497483, type: 3}
+    probabilidad: 100

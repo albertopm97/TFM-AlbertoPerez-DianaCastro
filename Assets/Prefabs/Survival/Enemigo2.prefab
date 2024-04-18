@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: -5663095652270982492}
   - component: {fileID: 5693545770812396335}
   - component: {fileID: 3774603711085121240}
+  - component: {fileID: 4080114972699026432}
   m_Layer: 0
   m_Name: Enemigo2
   m_TagString: Enemy
@@ -228,6 +229,7 @@ MonoBehaviour:
   vidaActual: 0
   damageActual: 0
   distanciaLimite: 20
+  blood: {fileID: 0}
 --- !u!114 &3774603711085121240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +257,28 @@ MonoBehaviour:
   - {x: 0.00000016969129, y: 5.8235905e-10, z: 8.98e-43}
   - {x: 4.6e-44, y: 0.000000013399409, z: -8.9333575e-13}
   - {x: 8.98e-43, y: -7.701949e-35, z: 8.98e-43}
+--- !u!114 &4080114972699026432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4348460503244488926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3e871b4770f2f42bdc7377038bf597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - nombre: moneda3
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 20
+  - nombre: moneda2
+    itemPrefab: {fileID: 6135898768387338088, guid: 0823b0bbb21280d488cf32e92c9200fb, type: 3}
+    probabilidad: 40
+  - nombre: moneda1
+    itemPrefab: {fileID: 6135898768387338088, guid: ef3dea45be8692841836618959497483, type: 3}
+    probabilidad: 100
 --- !u!1 &6278291372591865124
 GameObject:
   m_ObjectHideFlags: 0

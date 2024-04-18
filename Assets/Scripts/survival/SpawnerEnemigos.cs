@@ -74,7 +74,7 @@ public class SpawnerEnemigos : MonoBehaviour
 
     //Implementacion de Corutina (coroutine) --> sirven para implementar logica basada en tiempo de forma mas eficiente
     // En general para implementacion de funciones asíncronas. En este caso lo usamos para la lógica de las oleadas por tiempo
-    void comenzarSiguienteWave()
+    public void comenzarSiguienteWave()
     {
         /*yield sirve para parar la ejecucion, en este caso por un tiempo específico
         yield return new WaitForSeconds(intervaloWave);*/

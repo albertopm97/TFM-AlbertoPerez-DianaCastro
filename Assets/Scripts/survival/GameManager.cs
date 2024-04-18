@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
     public GameObject menuTienda;
     public GameObject botonesTienda;
 
+    [Header("SpawnerEnemigos")]
+    public GameObject spawner;
+
     [Header("Cronometro")]
     public float tiempoCrono;
     public TextMeshProUGUI tiempoCronoUI;
@@ -51,6 +55,11 @@ public class GameManager : MonoBehaviour
         }
 
         desactivarMenus();
+    }
+
+    private void Start()
+    {
+        //TooltipScreenSpaceUI.showTooltip_static("Aqui probando el tooltis desde el GameMaster. GRAAAAANDE EL GAMEMASTER.");
     }
 
     void Update()
@@ -91,7 +100,7 @@ public class GameManager : MonoBehaviour
                 if (!mejorandoEquipamiento)
                 {
                     mejorandoEquipamiento = true;
-                    Time.timeScale = 0f;
+                    //Time.timeScale = 0f;
                     Debug.Log("Jugador usando la tienda");
                     menuTienda.SetActive(true);
                 }
@@ -188,6 +197,15 @@ public class GameManager : MonoBehaviour
         UI_Shop scriptTienda = menuTienda.GetComponent<UI_Shop>();
         scriptTienda.generarMenu();
         botonesTienda.SetActive(true);
+
+        //Hay que para el spawner y destruir a todos los enemigos que quedan en la escena
+        
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            Destroy(g);
+        }
+
+        spawner.gameObject.SetActive(false);
     }
 
     public void finMenuTienda()
@@ -197,7 +215,12 @@ public class GameManager : MonoBehaviour
         scriptTienda.desactivarMenu();
         mejorandoEquipamiento = false;
         botonesTienda.SetActive(false);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
+
+        //comenzamos la siguiente wave
+        spawner.gameObject.SetActive(true);
+        spawner.GetComponent<SpawnerEnemigos>().comenzarSiguienteWave();
+
     }
 
     /*
