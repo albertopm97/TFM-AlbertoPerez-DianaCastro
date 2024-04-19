@@ -61,23 +61,12 @@ public class Weapon : MonoBehaviour
 
             cdActual = velocidadAtaqueActual;
         }
-
-        if(numProyectilesActual > 5) 
-        {
-            numProyectilesActual = 5;
-        }
-
-        if (velocidadAtaqueActual < 0.2f)
-        {
-            velocidadAtaqueActual = 0.2f;
-        }
-
     }
 
     void PlayerShoot()
     {
         GameObject intantiatePrefab;
-        switch (numProjectiles)
+        switch (numProyectilesActual)
         {
             case 1:
                 intantiatePrefab = weaponStats.Prefab;

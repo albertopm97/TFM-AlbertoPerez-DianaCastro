@@ -164,7 +164,7 @@ MonoBehaviour:
   vidaActual: 20
   damageActual: 6
   distanciaLimite: 20
-  blood: {fileID: 0}
+  blood: {fileID: 6913625232408864978, guid: a7325e9eafbb20f4bb6036debd44b343, type: 3}
 --- !u!114 &4955679994014770069
 MonoBehaviour:
   m_ObjectHideFlags: 0

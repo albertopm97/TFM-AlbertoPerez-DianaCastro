@@ -325,10 +325,15 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
                 switch (rareza)
                 {
                     default:
-                    case 0: referenciaAtaqueJugador.numProjectiles += 1; break;
-                    case 1: referenciaAtaqueJugador.numProjectiles += 2; break;
-                    case 2: referenciaAtaqueJugador.numProjectiles += 3; break;
-                    case 3: referenciaAtaqueJugador.numProjectiles += 4; break;
+                    case 0: referenciaAtaqueJugador.numProyectilesActual += 1; break;
+                    case 1: referenciaAtaqueJugador.numProyectilesActual += 2; break;
+                    case 2: referenciaAtaqueJugador.numProyectilesActual += 3; break;
+                    case 3: referenciaAtaqueJugador.numProyectilesActual += 4; break;
+                }
+
+                if (referenciaAtaqueJugador.numProyectilesActual > 5)
+                {
+                    referenciaAtaqueJugador.numProyectilesActual = 5;
                 }
                 break;
 
@@ -341,6 +346,11 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
                     case 1: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.2f; break;
                     case 2: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.3f; break;
                     case 3: referenciaAtaqueJugador.velocidadAtaqueActual -= 0.5f; break;
+                }
+
+                if (referenciaAtaqueJugador.velocidadAtaqueActual < 0.2f)
+                {
+                    referenciaAtaqueJugador.velocidadAtaqueActual = 0.2f;
                 }
                 break;
 

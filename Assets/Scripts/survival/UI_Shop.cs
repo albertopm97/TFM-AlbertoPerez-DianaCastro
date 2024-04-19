@@ -115,16 +115,17 @@ public class UI_Shop : MonoBehaviour
         //Creamos el boton interactuable
         itemTransform.GetComponent<Button_UI>().ClickFunc = () =>
         {
-            tryBuyItem(tipoMejora, rareza, coste);
+            if(tryBuyItem(tipoMejora, rareza, coste))
+            {
+                //gameObject.GetComponent<Button_UI>()
+                itemTransform.GetComponent<Button_UI>().ClickFunc = () => { };
 
-            //gameObject.GetComponent<Button_UI>()
-            //itemTransform.GetComponent<Button_UI>().ClickFunc = () => { };
+                itemTransform.Find("Nombre").GetComponent<TextMeshProUGUI>().SetText("Agotado!");
 
-            //itemTransform.Find("Nombre").GetComponent<TextMeshProUGUI>().SetText("Agotado!");
+                colorFondo = new Color(0.431f, 0.431f, 0.431f, 1);
 
-            //colorFondo = new Color(0.431f, 0.431f, 0.431f, 1);
-
-            //itemTransform.Find("Background").GetComponent<Image>().color = colorFondo;
+                itemTransform.Find("Background").GetComponent<Image>().color = colorFondo;
+            }
         };
 
         itemTransform.gameObject.SetActive(true);
@@ -219,20 +220,21 @@ public class UI_Shop : MonoBehaviour
         shopBackground.gameObject.SetActive(false);
     }
 
-    void tryBuyItem(Mejoras.tipoMejora tipoMejora, int rareza, int coste)
+    public bool tryBuyItem(Mejoras.tipoMejora tipoMejora, int rareza, int coste)
     {
         //Si el cliente tiene suficientes monedas, compra la mejora
         if (customer.trySpendGoldAmount(coste))
         {
             customer.mejoraComprada(tipoMejora, rareza);
+            return true;
         }
         else
         {
             //Activamos tooltip y su bool correspondiente
             TooltipScreenSpaceUI.showTooltip_static("No tienes suficientes monedas!!");
             alertaDineroActiva = true;
+            return false;
         }
-        
     }
 
     public void recargarTienda()
