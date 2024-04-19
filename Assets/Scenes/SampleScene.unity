@@ -1609,7 +1609,7 @@ MonoBehaviour:
   menuTienda: {fileID: 630718293}
   botonesTienda: {fileID: 505942709}
   spawner: {fileID: 813540636}
-  tiempoCrono: 5
+  tiempoCrono: 30
   tiempoCronoUI: {fileID: 1564136676}
   referenciaJugador: {fileID: 0}
 --- !u!4 &672165600
@@ -1977,6 +1977,23 @@ MonoBehaviour:
     frecuenciaSpawn: 5
     contadorSpawn: 0
   - nombreWave: Wave 3
+    grupos:
+    - nombre: rojo 1
+      prefabEnemigo: {fileID: 2684165432789080643, guid: 0c939f9792098ba4a98b02ad69dc74c1, type: 3}
+      cantidad: 60
+      contadorSpawn: 0
+    - nombre: rojo 2
+      prefabEnemigo: {fileID: 4348460503244488926, guid: 7fc9443ec886d2e42b8aad1f100c6f54, type: 3}
+      cantidad: 60
+      contadorSpawn: 0
+    - nombre: rojo 3
+      prefabEnemigo: {fileID: 1606261006888036036, guid: 7f2400239ce298f46924c3a4e6c2f7a9, type: 3}
+      cantidad: 60
+      contadorSpawn: 0
+    totalEnemigos: 0
+    frecuenciaSpawn: 5
+    contadorSpawn: 0
+  - nombreWave: Wave 4
     grupos:
     - nombre: rojo 1
       prefabEnemigo: {fileID: 2684165432789080643, guid: 0c939f9792098ba4a98b02ad69dc74c1, type: 3}
