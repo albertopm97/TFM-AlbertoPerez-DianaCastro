@@ -60,7 +60,8 @@ public class EstadisticasEnemigos : MonoBehaviour
     {
         Destroy(gameObject);
 
-        Instantiate(blood, transform.position, Quaternion.identity);
+        GameObject aux = Instantiate(blood, transform.position, Quaternion.identity);
+        Destroy(aux, 2f);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
