@@ -3,28 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MovimientoJugador : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-
-    //Limites del mapa (Para que el jugador no se puda salir) --> el mapa es cuadrado
-    public float limite = 40.0f;
-
     //Para referenciar mas tarde
-    Rigidbody2D rb; 
+    Rigidbody2D rb;
     Transform tr;
-    EstadisticasJugador jugador;
+    public float moveSpeed;
     PlayerInput playerInput;
 
     /*Esto lo hacemos porque necesitamos acceder a la direccion desde otros scripts pero no queremos modificarlo en el inspector
      Es buena práctica mantener el inspector lo más limpio posible*/
-    [HideInInspector] 
+    [HideInInspector]
     public Vector2 direccion;
-
 
     //Movimiento
     //public float velocidadMovimiento;   -> Antigua variable para el movimiento. Ahora se gestiona con el ScriptableObject del personaje
     //Las siguientes variables sirven para saber la ultima direccion en la que se movio el jugador (util al gestionar la inversion de animaciones, movimiento de proyectiles, ...)
-   // [HideInInspector] 
+    // [HideInInspector] 
     public float ultimoVectorHorizontal;
     //[HideInInspector]
     public float ultimoVectorVertical;
@@ -33,18 +28,8 @@ public class MovimientoJugador : MonoBehaviour
 
     private Vector2 movimientoInput = Vector2.zero;
 
-    //Hacemos uso del New Input System 
-   /*public void OnMove(InputAction.CallbackContext context)
-    {
-
-        movimientoInput = context.ReadValue<Vector2>();
-        //GestionInput();
-    }*/
-
-    // Start is called before the first frame update
     void Start()
     {
-        jugador = GetComponent<EstadisticasJugador>();
         //Al inicio almacenamos en la variable el componente RigidBody2D del jugador
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
@@ -55,7 +40,6 @@ public class MovimientoJugador : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         GestionInput();
@@ -97,14 +81,15 @@ public class MovimientoJugador : MonoBehaviour
         //float moverY = Input.GetAxisRaw("Vertical");
 
         movimientoInput = playerInput.actions["Move"].ReadValue<Vector2>();
-        
+
         float moverX = movimientoInput.x;
         float moverY = movimientoInput.y;
-        
-        direccion = new Vector2(moverX, moverY).normalized;
+
+        //En la calle solo nos podemos mover en dos direcciones
+        direccion = new Vector2(moverX, 0).normalized;
 
         //Inicializamos el valor el ultimo vector horizontal y vertical
-        if(direccion.x != 0)
+        if (direccion.x != 0)
         {
             ultimoVectorHorizontal = direccion.x;
             ultimoMovimiento = new Vector2(ultimoVectorHorizontal, 0f); //ajustamos ultimo movimiento en x
@@ -130,6 +115,6 @@ public class MovimientoJugador : MonoBehaviour
         }*/
 
         //se podria hacer la operacion en una sola vez, pero parece ser que haciendolo así se gana algo de rendimiento y facilita al motor de fisicas
-        rb.velocity = new Vector2(direccion.x * jugador.velocidadMovimientoActual * Time.deltaTime, direccion.y * jugador.velocidadMovimientoActual * Time.deltaTime);
+        rb.velocity = new Vector2(direccion.x * moveSpeed * Time.deltaTime, 0);
     }
 }
