@@ -35,6 +35,7 @@ public class GroundGenerator : MonoBehaviour
         {
             if (g != null)
             {
+                fuelCanisterList.Remove(g);
                 Destroy(g);
             }
         }

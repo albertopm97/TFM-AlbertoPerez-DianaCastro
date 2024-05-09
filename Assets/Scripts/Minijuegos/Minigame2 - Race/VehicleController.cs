@@ -21,7 +21,7 @@ public class VehicleController : MonoBehaviour
 
         moveSpeed = 200f;
 
-        rotationSpeed = 600f;
+        rotationSpeed = 1200f;
     }
 
     private void Update()
