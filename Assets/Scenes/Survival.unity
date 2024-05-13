@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 672165598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2681cb6a5154007459215f708444906a, type: 3}
+  m_Script: {fileID: 11500000, guid: ab9ef139aa8e3bc44bfc6214dd540543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   estadoDelJuegoActual: 0
@@ -2426,6 +2426,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a0e16991-0cea-4ce7-b3fd-2d35197f3767
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 08e3c982-6a96-4017-91a4-f6dbb5ca7f7e
+    m_ActionName: MinigameJump/Jump[/Keyboard/space,/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 128f295f-88c4-4f6d-90a0-c836a87ea3ec
+    m_ActionName: MinigameRace/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick,/XInputControllerWindows/leftStick]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

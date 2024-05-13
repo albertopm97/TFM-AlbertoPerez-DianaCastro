@@ -15,7 +15,7 @@ MonoBehaviour:
   armaInicial: {fileID: 0}
   vidaMaxima: 100
   recuperacion: 5
-  velocidadMovimiento: 10
+  velocidadMovimiento: 400
   poder: 5
   rapidezProyectil: 10
   imanObjetos: 10
