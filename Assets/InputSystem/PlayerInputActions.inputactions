@@ -227,6 +227,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MinigameFPS",
+            "id": "01fe26e5-e413-48ef-b355-80c3477af156",
+            "actions": [
+                {
+                    "name": "RotateGunJoystick",
+                    "type": "Value",
+                    "id": "cde0a921-4626-40ff-8ea5-00697608db4f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "42adc97a-8c01-4aa6-90fb-0b72b31596ab",
+                    "path": "<DualShockGamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "RotateGunJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1057cd54-a378-4ec0-8134-3f1b70d1e950",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "RotateGunJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

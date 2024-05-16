@@ -19,9 +19,9 @@ public class VehicleController : MonoBehaviour
     { 
         playerInput = GetComponent<PlayerInput>();
 
-        moveSpeed = 200f;
+        moveSpeed = 400f;
 
-        rotationSpeed = 1200f;
+        rotationSpeed = 600f;
     }
 
     private void Update()
