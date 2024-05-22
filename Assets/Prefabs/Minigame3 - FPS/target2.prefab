@@ -163,5 +163,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveP1: {fileID: 0}
   moveP2: {fileID: 0}
-  moveSpeed: 150
+  moveSpeed: 200
   moviendo: 0
