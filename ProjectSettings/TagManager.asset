@@ -8,6 +8,7 @@ TagManager:
   - Jugador
   - Ground
   - Target
+  - Vine
   layers:
   - Default
   - TransparentFX

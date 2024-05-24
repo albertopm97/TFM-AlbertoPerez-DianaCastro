@@ -1,0 +1,58 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerSwingController : MonoBehaviour
+{
+    private Rigidbody2D rb;
+    private bool isSwinging = false;
+    private HingeJoint2D hingeJoint;
+    private GameObject vine;
+    private BoxCollider2D bc;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        hingeJoint = gameObject.GetComponent<HingeJoint2D>();
+        hingeJoint.enabled = false;
+        bc = GetComponent<BoxCollider2D>();
+    }
+
+    void Update()
+    {
+
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Vine")
+        {
+            GrabVine(collision.gameObject);
+        }
+    }
+
+    private void GrabVine(GameObject vine)
+    {
+        isSwinging = true;
+        this.vine = vine;
+        hingeJoint.connectedBody = vine.GetComponent<Rigidbody2D>();
+        hingeJoint.enabled = true;
+
+        print("Grabeada la verga");
+        bc.enabled = false;
+
+
+    }
+
+    public void ReleaseVine()
+    {
+        if(isSwinging)
+        {
+            isSwinging = false;
+            hingeJoint.connectedBody = null;
+            hingeJoint.enabled = false;
+            rb.velocity = new Vector2(rb.velocity.x, 0); // Reinicia la velocidad vertical
+        }
+        
+    }
+}
