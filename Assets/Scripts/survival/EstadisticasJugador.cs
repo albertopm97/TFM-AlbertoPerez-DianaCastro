@@ -30,25 +30,6 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 
     public int monedas;
 
-    /*Gestion de experiencia
-    [Header("Experiencia/Nivel")]
-    public int experiencia = 0;
-    public int nivel = 1;
-    public int maxExperiencia;
-
-
-    //Para gestion de subidas de niveles y cambios en la experiencia máxima
-    public List<RangoNivel> rangosNivel;
-
-    //Para la gestion del inventario
-    GestorInventario inventario;
-    public int ranuraArma;
-    public int ranuraPasivo;
-
-    //pruebas
-    public GameObject arma2;
-    public GameObject pasivo1, pasivo2;*/
-
     [Header("IFrames")]
     //Para gestion de frames de invulnerabilidad (no recibir daño constante y rapido)
     public float duracionInv;
@@ -60,21 +41,6 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     public Image barraHp;
     public TextMeshProUGUI MonedasUI;
 
-    /*Clase para gestion de los rangos de nivel. En cada rango, la experiencia necesaria para subir de nivel varia de forma distinta
-    //Cabe destacar que el siguiente sistema de subida de lv no es de desarrollo propio, es el utilizado en el juego original "vampire survivor"
-    // de lv 1 a 2 se necesitan 5 xp
-    //desde lv 2 a lv 20 se incrementa la experienca necesaria en 10 cada lv (15 xp de lv 2 a 3, 25xp de lv 3 a 4, ...)
-    //lv 21 a 40 el incremento es de 13xp
-    //lv 40 en adelante incremento de 16xp
-
-
-    [System.Serializable]
-    public class RangoNivel
-    {
-        public int nivelInicial;
-        public int nivelFinal;
-        public int incrementoMaxExperiencia;
-    }*/
 
     [Header("Sonido")]
     public AudioSource sonidoHit;
@@ -84,8 +50,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 
     private void Start()
     {
-        //Inicializamos la experiencia maxima incial como el primer incremento máximo de experiencia (0 + incremento = incremento)
-        //maxExperiencia = rangosNivel[0].incrementoMaxExperiencia;
+        
 
         actualizarBarraHP();
 
@@ -123,15 +88,6 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         rapidezProyectilActual = infoPersonaje.RapidezProyectil;
         imanObjetosActual = infoPersonaje.ImanObjetos;
         monedas = 0;
-
-        /*inventario = GetComponent<GestorInventario>();
-
-        equiparNuevaArma(infoPersonaje.ArmaInicial);
-
-        if(SelectorPersonaje.instancia != null)
-        {
-            SelectorPersonaje.instancia.DestruirSingleton();
-        }*/
     }
 
     public void sumarMonedas(int cantidad)
@@ -157,7 +113,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
             esInvulnerable = true;
             //sonidoHit.Play();
 
-            if (vidaMaximaActual <= 0)
+            if (vidaActual <= 0)
             {
                 //sonidoMuerte.Play();
                 Morir();
@@ -172,17 +128,13 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         barraHp.fillAmount = vidaActual / vidaMaximaActual;
     }
 
-    /*void actualizarBarraExp()
-    {
-        barraExp.fillAmount = experiencia / maxExperiencia;
-    }*/
 
     public void Morir()
     {
-        /*if (!GameManager.instancia.juegoFinalizado)
+        if (!GameManager.instancia.juegoFinalizado)
         {
             GameManager.instancia.gameOver();
-        }*/
+        }
     }
 
     public void curar(float vidaACurar)

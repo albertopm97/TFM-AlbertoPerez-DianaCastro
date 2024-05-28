@@ -154,9 +154,12 @@ public class GameManager : MonoBehaviour
 
     void desactivarMenus()
     {
-        //menuPausa.SetActive(false);
-        //menuFinJuego.SetActive(false);
-        //menuTienda.SetActive(false);
+        menuPausa.SetActive(false);
+        menuFinJuego.SetActive(false);
+        menuTienda.SetActive(false);
+
+        //Volvemos a dejar el tiempo normal
+        Time.timeScale = 1f;
     }
 
     public void gameOver()
@@ -166,7 +169,7 @@ public class GameManager : MonoBehaviour
 
     public void mostrarPantallaFinal() 
     {
-        // menuFinJuego.SetActive(true);
+        menuFinJuego.SetActive(true);
     }
 
     void actualizarCrono()
@@ -240,4 +243,15 @@ public class GameManager : MonoBehaviour
         menuTienda.SetActive(false);
         cambiarEstadoActual(estadoDelJuego.Gameplay);
     }*/
+
+    public void exitGame()
+    {
+        Application.Quit();
+        Debug.Log("Leaving game...");
+    }
+
+    public void replyaSurvival()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }

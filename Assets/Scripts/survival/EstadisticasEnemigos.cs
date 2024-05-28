@@ -6,6 +6,8 @@ public class EstadisticasEnemigos : MonoBehaviour
 {
     public ScriptableObjectEnemigos estadisticas;
 
+    public Animator animator;
+
     //Estadisticas actuales del enemigo
     [HideInInspector]
     public float rapidezActual;
@@ -23,6 +25,8 @@ public class EstadisticasEnemigos : MonoBehaviour
     //Funcion llamada al cargar el script
     void Awake()
     {
+        animator = GetComponent<Animator>();
+
         rapidezActual = estadisticas.Rapidez;
         vidaActual = estadisticas.VidaMaxima;
         damageActual = estadisticas.Damage;
@@ -95,5 +99,10 @@ public class EstadisticasEnemigos : MonoBehaviour
             transform.position = jugador.position + spawner.puntosSpawn[Random.Range(0, spawner.puntosSpawn.Count - 1)].position;
         }
         
+    }
+
+    public void SpawnEnd()
+    {
+        animator.SetBool("Spawning", false);
     }
 }

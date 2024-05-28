@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estadisticas: {fileID: 11400000, guid: 03ff28e9fa2ea6f439dfef792f431049, type: 2}
+  animator: {fileID: 0}
   rapidezActual: 0
   vidaActual: 0
   damageActual: 0

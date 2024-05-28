@@ -85,7 +85,8 @@ public class UI_Shop : MonoBehaviour
         {
             case 0:
 
-                colorFondo = new Color(0.901f, 0.862f, 0.862f, 1);
+                //colorFondo = new Color(0.901f, 0.862f, 0.862f, 1);
+                colorFondo = new Color(0.82f, 0.804f, 0.804f, 1);
                 break;
 
             case 1:
@@ -191,15 +192,15 @@ public class UI_Shop : MonoBehaviour
             switch (tipoMejora)
             {
                 default:
-                case Mejoras.tipoMejora.Salud: crearBotonInterfaz(Mejoras.tipoMejora.Salud, Mejoras.getSprite(Mejoras.tipoMejora.Salud), "Salud máxima", Mejoras.calcularCoste(Mejoras.tipoMejora.Salud, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.Salud: crearBotonInterfaz(Mejoras.tipoMejora.Salud, Mejoras.getSprite(Mejoras.tipoMejora.Salud), "Salud maxima", Mejoras.calcularCoste(Mejoras.tipoMejora.Salud, rareza), i, rareza); break;
                 case Mejoras.tipoMejora.CuraPasiva: crearBotonInterfaz(Mejoras.tipoMejora.CuraPasiva, Mejoras.getSprite(Mejoras.tipoMejora.CuraPasiva), "Cura pasiva", Mejoras.calcularCoste(Mejoras.tipoMejora.CuraPasiva, rareza), i, rareza); break;
-                case Mejoras.tipoMejora.VelocidadMovimiento: crearBotonInterfaz(Mejoras.tipoMejora.VelocidadMovimiento, Mejoras.getSprite(Mejoras.tipoMejora.VelocidadMovimiento), "Velocidad de movimiento", Mejoras.calcularCoste(Mejoras.tipoMejora.VelocidadMovimiento, rareza), i, rareza); break;
-                case Mejoras.tipoMejora.VelocidadProyectil: crearBotonInterfaz(Mejoras.tipoMejora.VelocidadProyectil, Mejoras.getSprite(Mejoras.tipoMejora.VelocidadProyectil), "Velocidad de proyectil", Mejoras.calcularCoste(Mejoras.tipoMejora.VelocidadProyectil, rareza), i, rareza); break;
-                case Mejoras.tipoMejora.Damage: crearBotonInterfaz(Mejoras.tipoMejora.Damage, Mejoras.getSprite(Mejoras.tipoMejora.Damage), "Daño", Mejoras.calcularCoste(Mejoras.tipoMejora.Damage, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.VelocidadMovimiento: crearBotonInterfaz(Mejoras.tipoMejora.VelocidadMovimiento, Mejoras.getSprite(Mejoras.tipoMejora.VelocidadMovimiento), "Movilidad", Mejoras.calcularCoste(Mejoras.tipoMejora.VelocidadMovimiento, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.VelocidadProyectil: crearBotonInterfaz(Mejoras.tipoMejora.VelocidadProyectil, Mejoras.getSprite(Mejoras.tipoMejora.VelocidadProyectil), "Velocidad proyectil", Mejoras.calcularCoste(Mejoras.tipoMejora.VelocidadProyectil, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.Damage: crearBotonInterfaz(Mejoras.tipoMejora.Damage, Mejoras.getSprite(Mejoras.tipoMejora.Damage), "Potenciar ataque", Mejoras.calcularCoste(Mejoras.tipoMejora.Damage, rareza), i, rareza); break;
                 case Mejoras.tipoMejora.Poder: crearBotonInterfaz(Mejoras.tipoMejora.Poder, Mejoras.getSprite(Mejoras.tipoMejora.Poder), "Poder", Mejoras.calcularCoste(Mejoras.tipoMejora.Poder, rareza), i, rareza); break;
-                case Mejoras.tipoMejora.numProyectiles: crearBotonInterfaz(Mejoras.tipoMejora.numProyectiles, Mejoras.getSprite(Mejoras.tipoMejora.numProyectiles), "Mas proyectiles!", Mejoras.calcularCoste(Mejoras.tipoMejora.numProyectiles, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.numProyectiles: crearBotonInterfaz(Mejoras.tipoMejora.numProyectiles, Mejoras.getSprite(Mejoras.tipoMejora.numProyectiles), "Mas proyectiles", Mejoras.calcularCoste(Mejoras.tipoMejora.numProyectiles, rareza), i, rareza); break;
                 case Mejoras.tipoMejora.velocidadAtaque: crearBotonInterfaz(Mejoras.tipoMejora.velocidadAtaque, Mejoras.getSprite(Mejoras.tipoMejora.velocidadAtaque), "Velocidad de ataque", Mejoras.calcularCoste(Mejoras.tipoMejora.velocidadAtaque, rareza), i, rareza); break;
-                case Mejoras.tipoMejora.penetracion: crearBotonInterfaz(Mejoras.tipoMejora.penetracion, Mejoras.getSprite(Mejoras.tipoMejora.penetracion), "Penetración", Mejoras.calcularCoste(Mejoras.tipoMejora.penetracion, rareza), i, rareza); break;
+                case Mejoras.tipoMejora.penetracion: crearBotonInterfaz(Mejoras.tipoMejora.penetracion, Mejoras.getSprite(Mejoras.tipoMejora.penetracion), "Penetracion", Mejoras.calcularCoste(Mejoras.tipoMejora.penetracion, rareza), i, rareza); break;
             }
         }
 
