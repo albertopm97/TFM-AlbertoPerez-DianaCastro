@@ -13,6 +13,8 @@ public class ComportamientoEnemigo3 : ComporamientoEnemigo
     private estado estadoActual;
     private Animator animator;
 
+    private bool atackDirCalculed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,11 +38,19 @@ public class ComportamientoEnemigo3 : ComporamientoEnemigo
 
                 transform.position = Vector2.MoveTowards(transform.position, jugador.transform.position, enemigo.rapidezActual * Time.deltaTime);
 
+                if (jugador.transform.position.x - transform.position.x > 0)
+                {
+                    transform.localScale = new Vector2(-1, 1);
+                }
+                else
+                {
+                    transform.localScale = new Vector2(1, 1);
+                }
+
                 //Si llegamos al umbral del ataque, calculamos la direccion del dash y activamos el ataque
-                if(Vector3.Distance(transform.position, jugador.position) <= distanciaCarga)
+                if (Vector3.Distance(transform.position, jugador.position) <= distanciaCarga)
                 {
                     estadoActual = estado.cargandoAtaque;
-                    direccionCarga = (jugador.position - this.transform.position).normalized;
                 }
 
                 break;
@@ -51,12 +61,20 @@ public class ComportamientoEnemigo3 : ComporamientoEnemigo
                 //Activamos el ataque pasados dos segundos y activamos animacion de carga
                 Invoke("cargarAtaque", 1.5f);
                 animator.SetBool("CargandoAtaque", true);
+
+                direccionCarga = (jugador.position - this.transform.position).normalized;
                 break;
 
             case estado.Atacando:
 
                 print(direccionCarga.ToString());
-                //transform.position = new Vector2(direccionCarga.x * fuerzaCarga * Time.deltaTime, direccionCarga.y * fuerzaCarga * Time.deltaTime);
+
+                if (!atackDirCalculed)
+                {
+                    direccionCarga = (jugador.position - this.transform.position).normalized;
+                    atackDirCalculed = true;
+                }
+                
                 transform.Translate(direccionCarga * fuerzaCarga * Time.deltaTime);
 
                 Invoke("finAtaque", 0.3f);
@@ -74,5 +92,7 @@ public class ComportamientoEnemigo3 : ComporamientoEnemigo
     {
         estadoActual = estado.siguiendo;
         animator.SetBool("CargandoAtaque", false);
+
+        atackDirCalculed = false;
     }
 }

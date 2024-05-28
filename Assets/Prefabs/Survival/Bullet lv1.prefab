@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfedf765d91d8b46807b3b54145947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullets:
+  - {fileID: 7258383665735392087}
 --- !u!50 &2105972158852343757
 Rigidbody2D:
   serializedVersion: 4
@@ -133,5 +135,10 @@ PrefabInstance:
 --- !u!4 &4756024113317033743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3828976425468795111, guid: 53615d9d2b7f2ad4cbb8bcc2001d7b4b, type: 3}
+  m_PrefabInstance: {fileID: 8584858688586362856}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7258383665735392087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1412298509033043135, guid: 53615d9d2b7f2ad4cbb8bcc2001d7b4b, type: 3}
   m_PrefabInstance: {fileID: 8584858688586362856}
   m_PrefabAsset: {fileID: 0}

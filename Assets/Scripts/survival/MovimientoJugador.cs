@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,9 @@ public class MovimientoJugador : MonoBehaviour
     Transform tr;
     EstadisticasJugador jugador;
     PlayerInput playerInput;
+    Animator animator;
+
+    public GameObject barravida;
 
     /*Esto lo hacemos porque necesitamos acceder a la direccion desde otros scripts pero no queremos modificarlo en el inspector
      Es buena práctica mantener el inspector lo más limpio posible*/
@@ -49,9 +53,11 @@ public class MovimientoJugador : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         tr = GetComponent<Transform>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
 
         //Inicializamos el ultimo vector de movimiento a la posicion original del jugador (hacia la derecha)
         ultimoMovimiento = new Vector2(1, 0f);
+
 
     }
 
@@ -60,23 +66,15 @@ public class MovimientoJugador : MonoBehaviour
     {
         GestionInput();
 
-        /*Restriccion del movimiento del jugador al mapa
-        if(tr.position.x < -40)
+        //cambiamos escala a negativa si vamos en direccion derecha
+        if (rb.velocity.x > 0)
         {
-            tr.position = new Vector3(-40, tr.position.y, tr.position.z);
+            transform.localScale = new Vector2(-1, 1);
         }
-        if (tr.position.x > 40)
+        else if (rb.velocity.x < 0) //Si nos movemos a la izquierda, cambiamos la escala a negativo para invertir el prota (con todos sus componentes)
         {
-            tr.position = new Vector3(40, tr.position.y, tr.position.z);
+            transform.localScale = new Vector2(1, 1);
         }
-        if (tr.position.y < -39.7)
-        {
-            tr.position = new Vector3(tr.position.x, -39.7f, tr.position.z);
-        }
-        if (tr.position.y > 40)
-        {
-            tr.position = new Vector3(tr.position.x, 40, tr.position.z);
-        }*/
     }
 
     //Usamos esta funcion para el movimiento ya que funciona mejor con las físicas (es independiente del frame rate)
@@ -131,5 +129,14 @@ public class MovimientoJugador : MonoBehaviour
 
         //se podria hacer la operacion en una sola vez, pero parece ser que haciendolo así se gana algo de rendimiento y facilita al motor de fisicas
         rb.velocity = new Vector2(direccion.x * jugador.velocidadMovimientoActual * Time.deltaTime, direccion.y * jugador.velocidadMovimientoActual * Time.deltaTime);
+
+        if(direccion.x != 0 || direccion.y != 0)
+        {
+            animator.SetBool("Walking", true);
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 {
@@ -57,7 +58,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     //Para la barra de vida
     [Header("UI")]
     public Image barraHp;
-    //public Image barraExp;
+    public TextMeshProUGUI MonedasUI;
 
     /*Clase para gestion de los rangos de nivel. En cada rango, la experiencia necesaria para subir de nivel varia de forma distinta
     //Cabe destacar que el siguiente sistema de subida de lv no es de desarrollo propio, es el utilizado en el juego original "vampire survivor"
@@ -136,6 +137,12 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     public void sumarMonedas(int cantidad)
     {
         monedas += cantidad;
+        actualizarMonedasUI();
+    }
+
+    public void actualizarMonedasUI()
+    {
+        MonedasUI.text = monedas.ToString();
     }
 
     public void RecibirAtaque(float dmg)
@@ -373,6 +380,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
         if(monedas >= goldAmount)
         {
             monedas -= goldAmount;
+            actualizarMonedasUI();
             return true;
         }
         else

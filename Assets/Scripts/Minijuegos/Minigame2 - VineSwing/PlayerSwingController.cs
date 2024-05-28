@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,10 @@ public class PlayerSwingController : MonoBehaviour
     private HingeJoint2D hingeJoint;
     private GameObject vine;
     private BoxCollider2D bc;
+
+    public float swingForce;
+
+    public CinemachineVirtualCamera vc;
 
     void Start()
     {
@@ -51,8 +56,21 @@ public class PlayerSwingController : MonoBehaviour
             isSwinging = false;
             hingeJoint.connectedBody = null;
             hingeJoint.enabled = false;
-            rb.velocity = new Vector2(rb.velocity.x, 0); // Reinicia la velocidad vertical
+            //rb.velocity = new Vector2(rb.velocity.x, 0); // Reinicia la velocidad vertical
+            rb.AddForce(Vector2.right * swingForce, ForceMode2D.Impulse);
+
+            vc.Follow = this.transform;
         }
         
+    }
+
+    public void swingRight()
+    {
+        rb.AddForce(Vector2.right * swingForce, ForceMode2D.Impulse);
+    }
+
+    public void swingLeft()
+    {
+        rb.AddForce(Vector2.left * swingForce, ForceMode2D.Impulse);
     }
 }

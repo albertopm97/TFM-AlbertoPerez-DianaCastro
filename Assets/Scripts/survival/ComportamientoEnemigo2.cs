@@ -62,6 +62,15 @@ public class ComportamientoEnemigo2 : ComporamientoEnemigo
         Vector3 targetPosition = patrolPoints[currentPatrolIndex];
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, patrolSpeed * Time.deltaTime);
 
+        if (targetPosition.x - transform.position.x > 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
+
         // Si el enemigo llega al punto de patrulla, avanza al siguiente
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
@@ -73,5 +82,14 @@ public class ComportamientoEnemigo2 : ComporamientoEnemigo
     {
         // Mueve al enemigo hacia la posición del jugador
         transform.position = Vector3.MoveTowards(transform.position, jugador.position, enemigo.rapidezActual * Time.deltaTime);
+
+        if (jugador.transform.position.x - transform.position.x > 0)
+        {
+            transform.localScale = new Vector2(-1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector2(1, 1);
+        }
     }
 }

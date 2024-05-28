@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
         weapon = FindObjectOfType<Weapon>();
         piercing = weapon.piercingActual;
         dmg = weapon.damageActual * weapon.poderActual;
+
+        transform.localScale = new Vector2(-1, 1);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -33,6 +33,7 @@ public class BaseBullet : MonoBehaviour
 
         transform.eulerAngles = new Vector3(0, 0, n);
 
+
         //También debemos destruir el objeto pasado un tiempo (no queremos acumular proyectiles)
         Destroy(this.gameObject, 5f);
 
