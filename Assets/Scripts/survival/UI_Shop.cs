@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class UI_Shop : MonoBehaviour
 {
     List<Transform> listaItemsTienda;
-    private Sprite iconoMonedas;
+    public Sprite iconoMonedas;
     private Transform container;
     private Transform shopItemTemplate;
     public GameObject shopBackground;
