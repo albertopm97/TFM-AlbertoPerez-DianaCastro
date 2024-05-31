@@ -31,14 +31,7 @@ public class GroundGenerator : MonoBehaviour
     private void OnValidate()
     {
         //Clear all the canisters
-        foreach (GameObject g in fuelCanisterList)
-        {
-            if (g != null)
-            {
-                fuelCanisterList.Remove(g);
-                Destroy(g);
-            }
-        }
+        fuelCanisterList.Clear();
 
         //Clear the map
         spriteShapeController.spline.Clear();
