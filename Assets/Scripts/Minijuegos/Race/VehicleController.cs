@@ -19,7 +19,7 @@ public class VehicleController : MonoBehaviour
     { 
         playerInput = GetComponent<PlayerInput>();
 
-        moveSpeed = 400f;
+        moveSpeed = 250f;
 
         rotationSpeed = 600f;
     }
@@ -47,5 +47,13 @@ public class VehicleController : MonoBehaviour
         frontTireRb.AddTorque(-horizontalInput * moveSpeed * Time.fixedDeltaTime);
         backTireRb.AddTorque(-horizontalInput * moveSpeed * Time.fixedDeltaTime);
         carRb.AddTorque(-horizontalInput * rotationSpeed * Time.fixedDeltaTime);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Finish")
+        {
+            Minigame2Manager.Instance.finish();
+        }
     }
 }

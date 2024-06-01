@@ -4,41 +4,47 @@ using UnityEngine;
 using UnityEngine.U2D;
 using UnityEngine.UIElements;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 
 public class GroundGenerator : MonoBehaviour
 {
     //References
     public SpriteShapeController spriteShapeController;
     public GameObject fuelCanister;
+    public GameObject racefin;
 
     //Improtant to clear all canisters when changing the ground
     private List<GameObject> fuelCanisterList = new List<GameObject>();
 
     //variables for terrain generation
-    [Range(3f, 100f)] public int levelLenght = 50;
-    [Range(1f, 50f)] public float xMultiplier = 2f;
-    [Range(1f, 50f)] public float yMultiplier = 2f;
-    [Range(0f, 1f)] public float curveSmoothness = 0.5f;
+    private int levelLenght = 40;
+    private float xMultiplier = 8f;
+    private float yMultiplier = 2f; //Valores correctos entre 5 y 15
+    private float curveSmoothness = 0.387f; //Valores correctos entre 
 
     //Variables for controlling the use of PerlinNoise
-    public float noiseStep = 0.5f;
-    public float bottom = 10f;
+    public float noiseStep = 0.5f; //Aleatorio entre 1 y 100
+    public float bottom = 10f; 
 
     private Vector3 lastPos;
 
-    //when some value changes in the editor or on script load
-    private void OnValidate()
+    private void Start()
     {
+        fuelCanisterList = new List<GameObject>();
+
+        generateLevel();
+    }
+
+    private void generateLevel()
+    {
+        levelLenght = 40;
+        xMultiplier = 8f;
+        yMultiplier = Random.Range(5f, 10f);
+        curveSmoothness = 0.387f;
+        noiseStep = Random.Range(1f, 100f);
+
         //Clear all the canisters
-        foreach (GameObject g in fuelCanisterList)
-        {
-            if (g != null)
-            {
-                fuelCanisterList.Remove(g);
-                Destroy(g);
-            }
-        }
+        fuelCanisterList.Clear();
 
         //Clear the map
         spriteShapeController.spline.Clear();
@@ -61,7 +67,13 @@ public class GroundGenerator : MonoBehaviour
             if (i % 10 == 0 && i != 0 && i != levelLenght)
             {
                 //Instantiate the canister and add to the list
-                fuelCanisterList.Add(Instantiate(fuelCanister, new Vector3(lastPos.x, lastPos.y + 2, lastPos.z), Quaternion.identity));
+                fuelCanisterList.Add(Instantiate(fuelCanister, new Vector3(lastPos.x, lastPos.y + 1, lastPos.z), Quaternion.identity));
+            }
+
+            if(i == levelLenght - 3)
+            {
+
+                Instantiate(racefin, new Vector3(lastPos.x, lastPos.y, lastPos.z), Quaternion.identity);
             }
         }
 
