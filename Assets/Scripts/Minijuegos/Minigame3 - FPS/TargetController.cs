@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
+    public int points;
+
     public Transform moveP1;
     public Transform moveP2;
     public float moveSpeed;
@@ -49,5 +51,10 @@ public class TargetController : MonoBehaviour
         {
 
         }
+    }
+
+    public int getPoints()
+    {
+        return points;
     }
 }

@@ -26,6 +26,7 @@ public class Minigame3FPSBullet : MonoBehaviour
             //EventsManager.OnEnemyHitted?.Invoke(collision.gameObject, damage);
             print("Objetivo tocado");
 
+            PointsUI.instance.refreshUI(collision.gameObject.GetComponent<TargetController>().getPoints());
             Destroy(collision.gameObject);
         }
         Destroy(gameObject);

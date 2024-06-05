@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class Minigame1PlayerController : MonoBehaviour
 {
+    public GameObject enterHole;
+    public GameObject hole;
+
     public float jumpForce;
 
     //Referencias
     public GameObject flecha;
     public Transform posicionSalto;
     Rigidbody2D rb;
+    Animator animator;
 
     private bool saltando;
 
@@ -20,6 +24,8 @@ public class Minigame1PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,6 +49,10 @@ public class Minigame1PlayerController : MonoBehaviour
 
         //Paramos el movimiento de la flecha
         flecha.GetComponent<ArrowController>().moviendo = false;
+
+        flecha.GetComponent<ArrowController>().gameObject.SetActive(false);
+
+        animator.SetBool("Jumping", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,6 +69,32 @@ public class Minigame1PlayerController : MonoBehaviour
 
             //activamos la gravedad para la caida
             rb.gravityScale = 1f;
+
+            transform.localScale = new Vector2(1, -1);
+        }
+
+        if(collision.gameObject.tag == "Target")
+        {
+
+            this.gameObject.SetActive(false);
+
+            hole.SetActive(false);
+
+            enterHole.SetActive(true);
+        }
+
+        if (collision.gameObject.tag == "Ground")
+        {
+
+            transform.localScale = new Vector2(1, 1);
+
+            transform.position = new Vector3(transform.position.x, transform.position.y - 2.5f, transform.position.z);
+
+            animator.SetBool("Jumping", false);
+
+            rb.velocity = Vector3.zero;
+
+            rb.gravityScale = 0f;
         }
     }
 }
