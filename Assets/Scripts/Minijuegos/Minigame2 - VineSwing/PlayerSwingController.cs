@@ -60,6 +60,8 @@ public class PlayerSwingController : MonoBehaviour
             rb.AddForce(Vector2.right * swingForce, ForceMode2D.Impulse);
 
             vc.Follow = this.transform;
+
+            Invoke("enableCollider", 1f);
         }
         
     }
@@ -72,5 +74,10 @@ public class PlayerSwingController : MonoBehaviour
     public void swingLeft()
     {
         rb.AddForce(Vector2.left * swingForce, ForceMode2D.Impulse);
+    }
+
+    private void enableCollider()
+    {
+        bc.enabled = true;
     }
 }
