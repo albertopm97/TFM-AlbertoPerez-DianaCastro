@@ -12,7 +12,7 @@ public class PlayerSwingController : MonoBehaviour
     private BoxCollider2D bc;
 
     public float swingForce;
-
+    public Animator animator;
     public CinemachineVirtualCamera vc;
 
     void Start()
@@ -36,6 +36,16 @@ public class PlayerSwingController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
+        {
+            animator.SetBool("inAir", false);
+
+            Invoke("finishGame", 2f);
+        }
+    }
+
     private void GrabVine(GameObject vine)
     {
         isSwinging = true;
@@ -43,7 +53,6 @@ public class PlayerSwingController : MonoBehaviour
         hingeJoint.connectedBody = vine.GetComponent<Rigidbody2D>();
         hingeJoint.enabled = true;
 
-        print("Grabeada la verga");
         bc.enabled = false;
 
 
@@ -60,6 +69,8 @@ public class PlayerSwingController : MonoBehaviour
             rb.AddForce(Vector2.right * swingForce, ForceMode2D.Impulse);
 
             vc.Follow = this.transform;
+
+            animator.SetBool("inAir", true);
 
             Invoke("enableCollider", 1f);
         }
@@ -79,5 +90,11 @@ public class PlayerSwingController : MonoBehaviour
     private void enableCollider()
     {
         bc.enabled = true;
+        vc.m_Lens.OrthographicSize = 5f;
+    }
+
+    private void finishGame()
+    {
+        Minigame2Manager.Instance.finish();
     }
 }

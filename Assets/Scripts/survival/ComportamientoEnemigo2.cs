@@ -9,7 +9,7 @@ public class ComportamientoEnemigo2 : ComporamientoEnemigo
     public List<Transform> basePatrolPoints; // Puntos de patrulla
     public float patrolSpeed = 2f; // Velocidad de patrulla
     public float chaseSpeed = 4f; // Velocidad de persecución
-    public float chaseRange = 5f; // Rango de detección del jugador
+    public float chaseRange = 15f; // Rango de detección del jugador
 
     public List<Vector3> patrolPoints;
     private int currentPatrolIndex = 0;

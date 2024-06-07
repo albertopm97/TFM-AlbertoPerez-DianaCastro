@@ -654,7 +654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &217094619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1176,7 +1176,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7473013, y: 4.9900007, z: -10}
+  m_LocalPosition: {x: -0.53, y: 4.54, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1552,12 +1552,13 @@ MonoBehaviour:
   jugadorGanador: {fileID: 0}
   mejorandoEquipamiento: 0
   jugadorSubiendoNivel: 0
+  pi: {fileID: 944321082}
   menuPausa: {fileID: 1738548698}
   menuFinJuego: {fileID: 387680985}
   menuTienda: {fileID: 630718293}
   botonesTienda: {fileID: 505942709}
   spawner: {fileID: 813540636}
-  tiempoCrono: 5
+  tiempoCrono: 30
   tiempoCronoUI: {fileID: 1564136676}
   referenciaJugador: {fileID: 0}
 --- !u!4 &672165600
@@ -2423,7 +2424,7 @@ Transform:
   m_GameObject: {fileID: 944321075}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: 4.99, z: 0}
+  m_LocalPosition: {x: -0.53, y: 4.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3128,7 +3129,7 @@ Transform:
   m_GameObject: {fileID: 1354666315}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.07, y: 4.99, z: -10}
+  m_LocalPosition: {x: -0.53, y: 4.54, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4502,7 +4503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1201224972243560721, guid: 8bbb6c0102655ee438dab7a9a98dd56c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 280.9376
       objectReference: {fileID: 0}
     - target: {fileID: 1201224972243560721, guid: 8bbb6c0102655ee438dab7a9a98dd56c, type: 3}
       propertyPath: m_SizeDelta.y
@@ -4538,11 +4539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1201224972243560721, guid: 8bbb6c0102655ee438dab7a9a98dd56c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.8371793e-10
+      value: -0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 1201224972243560721, guid: 8bbb6c0102655ee438dab7a9a98dd56c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 1201224972243560721, guid: 8bbb6c0102655ee438dab7a9a98dd56c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

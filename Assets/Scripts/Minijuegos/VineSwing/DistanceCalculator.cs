@@ -20,4 +20,9 @@ public class DistanceCalculator : MonoBehaviour
 
         distanceUI.text = distance.ToString("F1") + "M";
     }
+
+    public float getDistance()
+    {
+        return distance;
+    }
 }
