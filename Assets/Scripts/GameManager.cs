@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour
     public Text jugadorGanador;
     public bool mejorandoEquipamiento = false;
     public int jugadorSubiendoNivel;
+
+    [Header("Input Jugador")]
+    public PlayerInput pi;
 
     [Header("UI")]
     public GameObject menuPausa;
@@ -213,6 +217,10 @@ public class GameManager : MonoBehaviour
         }
 
         spawner.gameObject.SetActive(false);
+
+        pi.enabled = false;
+
+        tiempoCronoUI.text = "Tienda!";
     }
 
     public void finMenuTienda()
@@ -227,6 +235,10 @@ public class GameManager : MonoBehaviour
         //comenzamos la siguiente wave
         spawner.gameObject.SetActive(true);
         spawner.GetComponent<SpawnerEnemigos>().comenzarSiguienteWave();
+
+        pi.enabled = true;
+
+        tiempoCronoUI.text = "30";
 
     }
 
