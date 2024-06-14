@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 78bb63b372e79854f91299b5c96097a5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mia_IDLE_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1608
+        width: 181
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78c03b30699cf044bbe07b2fee58d5a
+      internalID: -2049719212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_1
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1608
+        width: 181
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 606de70da7ff8a74fa5ee3d169b31c2e
+      internalID: 732701081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_2
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 1608
+        width: 181
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa8781a82764a074ea6c158ef8a91a42
+      internalID: 2064971689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_3
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1608
+        width: 180
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423c274fded04b24ba54d0fc0d990454
+      internalID: 1454987430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_4
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1608
+        width: 180
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac4d74e446bc884aaa80cf7c3ba4dca
+      internalID: -1204296126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_5
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 1608
+        width: 180
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3827a39e32ce63f43b54303768c8ee56
+      internalID: -2087031843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_6
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 1608
+        width: 180
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9473133c084204e9b1be724bb7b026
+      internalID: 1058420251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_7
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1608
+        width: 179
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468d6d54805b2e641aa115edf98c15d3
+      internalID: 175713398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_8
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 1608
+        width: 179
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b4acfbc8a7ba948aec984fd36e054a
+      internalID: -1980528738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_9
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 1608
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8b70b5e4a8bab4986a6c46570ae6bd
+      internalID: -926440510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_10
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 1608
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fabee1b238326d4fbec1721e51bd368
+      internalID: 1417145279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_11
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1659f773c4d80b4eba7f12c253d71a8
+      internalID: -975556872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_12
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80f691ba263a21241bdeb9e4a964c3be
+      internalID: -45212787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_13
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d77cb44637cf6c45b239290c6da60cf
+      internalID: 989101555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_14
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81954bcd486b87446bb6495b597902ba
+      internalID: 2126314087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_15
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e099f2a4124b7469760e619f3a4c52
+      internalID: -1699927280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_16
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d381142abe16d794cbe801d88805b329
+      internalID: -2008565898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_17
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cc6f1aedb354b1489539c88273448fc
+      internalID: 1844591170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_18
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1167
+        width: 178
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d243261a878eda647bfa73232c94ec9a
+      internalID: 1795416192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_19
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 1167
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a0c261fab01a04eb911cf546e0b292
+      internalID: 1371086886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_20
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 1167
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33b008c3d995d6b4aa1691cf9d1e69aa
+      internalID: 556758353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_21
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 1167
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0a327d8a085aa340bd52521bcffcdc7
+      internalID: -21101667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 726
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e921fd253502e4abac3a3a224e2e49
+      internalID: -1488108523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_23
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 726
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed3fcc6355edf646ad94da84493a3f8
+      internalID: -560736884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_24
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 726
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3c1c2c75760fe46b5473435aa20537
+      internalID: -1294395433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_25
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 726
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39c094ef1f3adc46ac9c04c376b5802
+      internalID: -1246267103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_26
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 726
+        width: 177
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10df2f734b9fee444bac8e4af7f6fc4e
+      internalID: -1275594142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_27
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 726
+        width: 176
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5deb3cde2d4d3246ae9551044987980
+      internalID: 40760934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_28
+      rect:
+        serializedVersion: 2
+        x: 1074
+        y: 726
+        width: 176
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e3a9fdb4932bb943a8b1d3f6269eb44
+      internalID: 1653103308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_IDLE_29
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 726
+        width: 176
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e627af273051ca4db5f28fa5dcbb2c5
+      internalID: -87385949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mia_IDLE_0: -2049719212
+      Mia_IDLE_1: 732701081
+      Mia_IDLE_10: 1417145279
+      Mia_IDLE_11: -975556872
+      Mia_IDLE_12: -45212787
+      Mia_IDLE_13: 989101555
+      Mia_IDLE_14: 2126314087
+      Mia_IDLE_15: -1699927280
+      Mia_IDLE_16: -2008565898
+      Mia_IDLE_17: 1844591170
+      Mia_IDLE_18: 1795416192
+      Mia_IDLE_19: 1371086886
+      Mia_IDLE_2: 2064971689
+      Mia_IDLE_20: 556758353
+      Mia_IDLE_21: -21101667
+      Mia_IDLE_22: -1488108523
+      Mia_IDLE_23: -560736884
+      Mia_IDLE_24: -1294395433
+      Mia_IDLE_25: -1246267103
+      Mia_IDLE_26: -1275594142
+      Mia_IDLE_27: 40760934
+      Mia_IDLE_28: 1653103308
+      Mia_IDLE_29: -87385949
+      Mia_IDLE_3: 1454987430
+      Mia_IDLE_4: -1204296126
+      Mia_IDLE_5: -2087031843
+      Mia_IDLE_6: 1058420251
+      Mia_IDLE_7: 175713398
+      Mia_IDLE_8: -1980528738
+      Mia_IDLE_9: -926440510
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

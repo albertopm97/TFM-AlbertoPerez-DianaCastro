@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 792a8ed1c67f0474ab27ec3e8e6e8618
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mia_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1618
+        width: 225
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d8d8512d71ee042bf3a4fbd86b6107
+      internalID: -776803235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1614
+        width: 223
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fcc5bca1870794fac8790f5f5e8530
+      internalID: 1825619687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 1619
+        width: 211
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a31d48c9b6d6f40ba126735f4ab3f5
+      internalID: -1555773957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1613
+        width: 179
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b980450f4255544a29b3cf04c5d879
+      internalID: -1899251835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1610
+        width: 178
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56e29f41cc51eec49a2f87e66b12e5fc
+      internalID: -1905969258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1613
+        width: 180
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa517cb808cee942b6a39224b90441c
+      internalID: -1865557672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1187
+        width: 224
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ad5397b074b93459c4be4c7a0f7056
+      internalID: -622776666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1177
+        width: 219
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a82c94938ac5e348b16e6a33c168ffc
+      internalID: 1747088944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 1175
+        width: 215
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc4e36b7185c4b244add86c0e87015b3
+      internalID: -273344137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1175
+        width: 176
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe696b0448ef2d3478927c41350d923b
+      internalID: -998402657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 1175
+        width: 178
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5159d44f1ba644a4582903918c1dd9a6
+      internalID: 608682665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 1174
+        width: 177
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd3051643ca4c7347b772413b7fb5ea9
+      internalID: 1023278650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 756
+        width: 220
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a66878c84ee6814e946efa44159954d
+      internalID: -793837110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 745
+        width: 216
+        height: 429
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02191d27ac35b9d4ab0e169ea74a3a60
+      internalID: -2083765374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 734
+        width: 201
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85532fbbac8c2048afdca60c3b3814a
+      internalID: 159513142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 747
+        width: 199
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101a6904b5ccb9845be513a712304d18
+      internalID: 965380046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 735
+        width: 192
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c5cef0c56e9134295db7f59614068b
+      internalID: -1538251387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_17
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 736
+        width: 177
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa45e6b4341dd1f408163cfb391d90d6
+      internalID: 750779802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_18
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 736
+        width: 176
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec394eb34537644f92c21474356189d
+      internalID: 1364807003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_19
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 736
+        width: 176
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ac1df16f225f047ac472b01d2e01ee
+      internalID: 1326334926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_20
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 316
+        width: 209
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cea609b8dbecd746aa18a3895b56b48
+      internalID: 1928623499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_21
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 317
+        width: 204
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc46ae0582efb544c984465b00e4fb00
+      internalID: -1900938729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_22
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 294
+        width: 186
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71de99bcc1545ed4f84e147c4c0694ae
+      internalID: 1597672880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_23
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 316
+        width: 192
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42390c43d310cf4699a3ac145ecec37
+      internalID: 620226240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_24
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 295
+        width: 184
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba68fd3c5bd1eb142a49d88fdbb2e3b9
+      internalID: 513485325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_25
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 303
+        width: 186
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0309af1c027a3dd438a6ce017196f1ce
+      internalID: 847888352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_26
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 295
+        width: 182
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b456b15ae58862409ce7baea340240d
+      internalID: -999790872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_27
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 302
+        width: 184
+        height: 431
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5ed702346c49d4681032398684acd5
+      internalID: -1966651621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_28
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 296
+        width: 180
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8f5f5925704aa4f80d484dddbc51e7
+      internalID: 1878805656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mia_Walk_29
+      rect:
+        serializedVersion: 2
+        x: 1765
+        y: 300
+        width: 181
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1076f61b33eecc746b3dc437c9f8f2aa
+      internalID: 986886220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mia_Walk_0: -776803235
+      Mia_Walk_1: 1825619687
+      Mia_Walk_10: 608682665
+      Mia_Walk_11: 1023278650
+      Mia_Walk_12: -793837110
+      Mia_Walk_13: -2083765374
+      Mia_Walk_14: 159513142
+      Mia_Walk_15: 965380046
+      Mia_Walk_16: -1538251387
+      Mia_Walk_17: 750779802
+      Mia_Walk_18: 1364807003
+      Mia_Walk_19: 1326334926
+      Mia_Walk_2: -1555773957
+      Mia_Walk_20: 1928623499
+      Mia_Walk_21: -1900938729
+      Mia_Walk_22: 1597672880
+      Mia_Walk_23: 620226240
+      Mia_Walk_24: 513485325
+      Mia_Walk_25: 847888352
+      Mia_Walk_26: -999790872
+      Mia_Walk_27: -1966651621
+      Mia_Walk_28: 1878805656
+      Mia_Walk_29: 986886220
+      Mia_Walk_3: -1899251835
+      Mia_Walk_4: -1905969258
+      Mia_Walk_5: -1865557672
+      Mia_Walk_6: -622776666
+      Mia_Walk_7: 1747088944
+      Mia_Walk_8: -273344137
+      Mia_Walk_9: -998402657
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
