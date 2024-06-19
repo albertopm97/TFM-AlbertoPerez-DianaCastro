@@ -5,15 +5,16 @@ using UnityEngine;
 public class GachaItemMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-
+    public bool pulled;
     private bool moviendo;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
     private void FixedUpdate()
     {
-        if(!moviendo)
+        if(!moviendo && pulled)
         {
             StartCoroutine("moveItem");
 
@@ -22,17 +23,20 @@ public class GachaItemMovement : MonoBehaviour
           
     }
 
+    public void startMoving()
+    {
+        pulled = true;
+    }
+
     public IEnumerator moveItem()
     {
         Vector3 randomDir = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0f);
 
         float randomForce = Random.Range(100f, 1000f);
 
-        print("MOVIENDO CON FUERZA " + randomForce + "y direccion: " + randomDir);
-
         rb.AddForce(randomDir *  randomForce);
 
-        yield return new WaitForSeconds(Random.Range(0.5f, 2.5f));
+        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
 
         moviendo = false;
     }

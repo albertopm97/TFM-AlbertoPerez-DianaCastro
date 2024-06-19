@@ -6,10 +6,14 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instancia;
+
+    public GameObject firstButtonPause;
+    public GameObject firstButtonGameOver;
 
     public enum estadoDelJuego
     {
@@ -127,6 +131,9 @@ public class GameManager : MonoBehaviour
         cambiarEstadoActual(estadoDelJuego.Pausa);
         Time.timeScale = 0f; //Literalmente para el tiempo
         menuPausa.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButtonPause);
         Debug.Log("Juego Pausado");
     }
 
@@ -174,6 +181,8 @@ public class GameManager : MonoBehaviour
     public void mostrarPantallaFinal() 
     {
         menuFinJuego.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButtonGameOver);
     }
 
     void actualizarCrono()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UI_Shop : MonoBehaviour
 {
@@ -20,7 +21,9 @@ public class UI_Shop : MonoBehaviour
     bool alertaDineroActiva;
     public float tiempoAlertaMonedas;
     float timerAlerta;
-    
+
+    //Primer boton (para naveacion)
+    public GameObject firstButton;
 
     private void Awake()
     {
@@ -130,11 +133,17 @@ public class UI_Shop : MonoBehaviour
         };
 
         itemTransform.gameObject.SetActive(true);
+
+        if(itemTransform == null)
+        {
+            firstButton = itemTransform.gameObject;
+        }
     }
 
     public void generarMenu()
     {
-        
+        firstButton = null;
+
         desactivarMenu();
         shopBackground.gameObject.SetActive(true);
 
@@ -208,6 +217,10 @@ public class UI_Shop : MonoBehaviour
          * crearBotonInterfaz(Mejoras.getSprite(Mejoras.tipoMejora.Salud), "Salud máxima", Mejoras.calcularCoste(Mejoras.tipoMejora.Salud, 2), 0, 1);
          */
         shopItemTemplate.gameObject.SetActive(false);
+
+        //Generado el menu debemos marcar el primer elemento para navegacion con mando
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstButton);
     }
 
     public void desactivarMenu()

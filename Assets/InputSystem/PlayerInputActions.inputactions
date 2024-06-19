@@ -433,6 +433,56 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Gachapon",
+            "id": "2e1b2b30-e8c8-43ef-9287-4baf57c00566",
+            "actions": [
+                {
+                    "name": "pull",
+                    "type": "Button",
+                    "id": "553b0717-4169-4a56-be2d-21b1248067a9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1dc5f4a8-4d7e-4638-9e00-aebae2b5262e",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "pull",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0fb7ba54-dd25-415d-b9d1-8b7ce450b87c",
+                    "path": "<DualShockGamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "pull",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "66f75908-dba5-42ae-bc53-33bb9fdbffd2",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "pull",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
