@@ -65,6 +65,7 @@ public class Weapon : MonoBehaviour
 
     void PlayerShoot()
     {
+
         GameObject intantiatePrefab;
         switch (numProyectilesActual)
         {
@@ -99,7 +100,8 @@ public class Weapon : MonoBehaviour
 
         BaseBullet bullet = aux.GetComponent<BaseBullet>();
 
-        bullet.initialize(shootDir, weaponStats.Rapidez); 
+        bullet.initialize(shootDir, weaponStats.Rapidez);
+
     }
 
     void findClosestEnemy()
