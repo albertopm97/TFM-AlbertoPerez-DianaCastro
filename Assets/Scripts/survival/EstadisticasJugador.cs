@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using FMODUnity; //Para FMOD
 
 public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 {
@@ -43,10 +44,9 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
 
 
     [Header("Sonido")]
-    public AudioSource sonidoHit;
-    public AudioSource sonidoMuerte;
-    public AudioSource sonidoLvUp;
-    public AudioSource sonidoMoneda;
+    //FMOD
+    [SerializeField] private EventReference coinFx;
+    [SerializeField] private EventReference buyUpgradeFx;
 
     private void Start()
     {
@@ -94,6 +94,7 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
     {
         monedas += cantidad;
         actualizarMonedasUI();
+        FMODUnity.RuntimeManager.PlayOneShot(coinFx);
     }
 
     public void actualizarMonedasUI()
@@ -325,6 +326,8 @@ public class EstadisticasJugador : MonoBehaviour, IShopCustomer
                 }
                 break;
         }
+
+        FMODUnity.RuntimeManager.PlayOneShot(buyUpgradeFx);
     }
 
     public bool trySpendGoldAmount(int goldAmount)

@@ -138,7 +138,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1875, y: 1.125}
+    oldSize: {x: 2.375, y: 2.25}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -166,6 +166,13 @@ MonoBehaviour:
   damageActual: 0
   distanciaLimite: 20
   blood: {fileID: 6913625232408864978, guid: a7325e9eafbb20f4bb6036debd44b343, type: 3}
+  deathFx:
+    Guid:
+      Data1: 1179487717
+      Data2: 1263643438
+      Data3: 284273078
+      Data4: -792117458
+    Path: event:/FX/Survival/GhostDeath
 --- !u!114 &3027162981198170223
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -788,9 +788,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -798,14 +798,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,6 +942,19 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &584795098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1302,20 @@ MonoBehaviour:
   spawner: {fileID: 813540636}
   tiempoCrono: 30
   tiempoCronoUI: {fileID: 1564136676}
+  UIClick:
+    Guid:
+      Data1: -296252071
+      Data2: 1226280183
+      Data3: -1140398953
+      Data4: 1823650843
+    Path: event:/FX/UI/UIClick
+  loopSurvival:
+    Guid:
+      Data1: 1348918555
+      Data2: 1165815564
+      Data3: 2024593306
+      Data4: -946945210
+    Path: event:/Music/Survival/LoopSurvival
   referenciaJugador: {fileID: 0}
 --- !u!4 &672165600
 Transform:
@@ -2096,10 +2115,20 @@ MonoBehaviour:
   duracionInv: 0
   barraHp: {fileID: 732994254}
   MonedasUI: {fileID: 1591632863}
-  sonidoHit: {fileID: 0}
-  sonidoMuerte: {fileID: 0}
-  sonidoLvUp: {fileID: 0}
-  sonidoMoneda: {fileID: 0}
+  coinFx:
+    Guid:
+      Data1: 1082269453
+      Data2: 1123611046
+      Data3: 102484656
+      Data4: -427891952
+    Path: event:/FX/Survival/Coin
+  buyUpgradeFx:
+    Guid:
+      Data1: 749597471
+      Data2: 1127556749
+      Data3: -87498831
+      Data4: -363319102
+    Path: event:/FX/Survival/BuyUpgrade
 --- !u!212 &944321077
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2301,6 +2330,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 06c5f4d1-1a2d-40b5-b97e-0ebb21fc8e9b
     m_ActionName: minigameSwing/LeftSwing[/Keyboard/a,/DualShock4GamepadHID/leftStick/left,/XInputControllerWindows/leftStick/left,/DualShock4GamepadHID/dpad/left,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 553b0717-4169-4a56-be2d-21b1248067a9
+    m_ActionName: Gachapon/pull[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -2319,6 +2352,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponStats: {fileID: 11400000, guid: 4ba70ef4189755047b37e3a28bddc3a5, type: 2}
+  shootFx:
+    Guid:
+      Data1: -391064632
+      Data2: 1141250080
+      Data3: -303722342
+      Data4: -3152281
+    Path: event:/FX/Survival/ShootFx
   atack2: {fileID: 4943200807927871350, guid: fdc37690b7c85944f8f67defea899565, type: 3}
   atack3: {fileID: 4943200807927871350, guid: cdb534b3e9a428e45827b91c39cd067d, type: 3}
   atack4: {fileID: 4943200807927871350, guid: 7d298b96942fba74c9adb5e94cce0fff, type: 3}

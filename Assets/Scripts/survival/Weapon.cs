@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity; //Para FMOD
 
 public class Weapon : MonoBehaviour
 {
     public ScriptableObjectArma weaponStats;
+
+    //FMOD
+    [SerializeField] private EventReference shootFx;
 
     [Header("Prefabs niveles de ataque")]
     public GameObject atack2;
@@ -102,6 +106,7 @@ public class Weapon : MonoBehaviour
 
         bullet.initialize(shootDir, weaponStats.Rapidez);
 
+        FMODUnity.RuntimeManager.PlayOneShot(shootFx);
     }
 
     void findClosestEnemy()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity; //Para FMOD
 
 public class EstadisticasEnemigos : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class EstadisticasEnemigos : MonoBehaviour
 
     //Particulas para la muerte
     public GameObject blood;
+
+    [Header("Sonido")]
+    //FMOD
+    [SerializeField] private EventReference deathFx;
 
     //Funcion llamada al cargar el script
     void Awake()
@@ -65,6 +70,8 @@ public class EstadisticasEnemigos : MonoBehaviour
         Destroy(gameObject);
 
         GameObject aux = Instantiate(blood, transform.position, Quaternion.identity);
+
+        FMODUnity.RuntimeManager.PlayOneShot(deathFx);
         Destroy(aux, 2f);
     }
 

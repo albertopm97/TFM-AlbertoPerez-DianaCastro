@@ -7,6 +7,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using FMODUnity; //Para FMOD
 
 public class GameManager : MonoBehaviour
 {
@@ -45,7 +46,9 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI tiempoCronoUI;
 
     [Header("Sonido")]
-    //public AudioSource loopJuego;
+    //FMOD
+    [SerializeField] private EventReference UIClick;
+    [SerializeField] private EventReference loopSurvival;
 
     public GameObject referenciaJugador;
 
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        FMODUnity.RuntimeManager.PlayOneShot(loopSurvival);
         //TooltipScreenSpaceUI.showTooltip_static("Aqui probando el tooltis desde el GameMaster. GRAAAAANDE EL GAMEMASTER.");
     }
 
@@ -135,6 +139,8 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButtonPause);
         Debug.Log("Juego Pausado");
+
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
     }
 
     public void reanudarJuego()
@@ -145,6 +151,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1f;
             menuPausa.SetActive(false);
             Debug.Log("Juego reanudado");
+
+            FMODUnity.RuntimeManager.PauseAllEvents(false);
+
+                                                                                  //Value
+            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ParamName", 10f);
         }
     }
 
@@ -248,6 +259,8 @@ public class GameManager : MonoBehaviour
         pi.enabled = true;
 
         tiempoCronoUI.text = "30";
+
+        FMODUnity.RuntimeManager.PlayOneShot(UIClick);
 
     }
 
