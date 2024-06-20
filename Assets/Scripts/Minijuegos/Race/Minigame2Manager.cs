@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static GameManager;
+using FMODUnity; //Para FMOD
 
 public class Minigame2Manager : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class Minigame2Manager : MonoBehaviour
     public GameObject menuPausa;
     public GameObject menuFinish;
 
+    [Header("Sonido")]
+    //FMOD
+    [SerializeField] private EventReference winFx;
+    [SerializeField] private EventReference gameOverFx;
+    [SerializeField] private StudioEventEmitter loopRaceEvent;
+
     private void Awake()
     {
         if (Instance == null)
@@ -36,6 +43,11 @@ public class Minigame2Manager : MonoBehaviour
         Time.timeScale = 1.0f;
 
         estadoDelJuegoActual = estadoDelJuego.Gameplay;
+    }
+
+    private void Start()
+    {
+        loopRaceEvent.Play();
     }
 
     void Update()
@@ -65,7 +77,8 @@ public class Minigame2Manager : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("FIN DEL JUEGO");
                     mostrarPantallaGameOver();
-                    //loopJuego.Stop();
+                    loopRaceEvent.Stop();
+                    FMODUnity.RuntimeManager.PlayOneShot(gameOverFx);
                 }
                 break;
 
@@ -77,7 +90,8 @@ public class Minigame2Manager : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("FIN DEL JUEGO");
                     mostrarPantallaVictoria();
-                    //loopJuego.Stop();
+                    loopRaceEvent.Stop();
+                    FMODUnity.RuntimeManager.PlayOneShot(winFx);
                 }
                 break;
 
@@ -104,6 +118,8 @@ public class Minigame2Manager : MonoBehaviour
         Time.timeScale = 0f; //Literalmente para el tiempo
         menuPausa.SetActive(true);
         Debug.Log("Juego Pausado");
+
+        FMODUnity.RuntimeManager.PauseAllEvents(true);
     }
 
     public void reanudarJuego()
@@ -114,6 +130,8 @@ public class Minigame2Manager : MonoBehaviour
             Time.timeScale = 1f;
             menuPausa.SetActive(false);
             Debug.Log("Juego reanudado");
+
+            FMODUnity.RuntimeManager.PauseAllEvents(false);
         }
     }
 

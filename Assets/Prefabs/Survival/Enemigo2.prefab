@@ -234,10 +234,10 @@ MonoBehaviour:
   blood: {fileID: 6913625232408864978, guid: a7325e9eafbb20f4bb6036debd44b343, type: 3}
   deathFx:
     Guid:
-      Data1: 1179487717
-      Data2: 1263643438
-      Data3: 284273078
-      Data4: -792117458
+      Data1: -1570196404
+      Data2: 1203024061
+      Data3: 900782521
+      Data4: -1885689918
     Path: event:/FX/Survival/GhostDeath
 --- !u!114 &3774603711085121240
 MonoBehaviour:

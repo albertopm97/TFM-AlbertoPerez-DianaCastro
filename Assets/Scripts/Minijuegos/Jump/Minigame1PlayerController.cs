@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMODUnity;
 
 public class Minigame1PlayerController : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class Minigame1PlayerController : MonoBehaviour
     Animator animator;
 
     private bool saltando;
+
+    [Header("Sonido")]
+    //FMOD
+    [SerializeField] private EventReference jumpFx;
 
 
 
@@ -53,6 +58,8 @@ public class Minigame1PlayerController : MonoBehaviour
         flecha.GetComponent<ArrowController>().gameObject.SetActive(false);
 
         animator.SetBool("Jumping", true);
+
+        FMODUnity.RuntimeManager.PlayOneShot(jumpFx);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -81,6 +88,8 @@ public class Minigame1PlayerController : MonoBehaviour
             hole.SetActive(false);
 
             enterHole.SetActive(true);
+
+            Minigame2Manager.Instance.finish();
         }
 
         if (collision.gameObject.tag == "Ground")
@@ -95,6 +104,8 @@ public class Minigame1PlayerController : MonoBehaviour
             rb.velocity = Vector3.zero;
 
             rb.gravityScale = 0f;
+
+            Minigame2Manager.Instance.gameOver();
         }
     }
 }

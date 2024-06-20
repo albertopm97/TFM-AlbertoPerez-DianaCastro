@@ -48,7 +48,8 @@ public class GameManager : MonoBehaviour
     [Header("Sonido")]
     //FMOD
     [SerializeField] private EventReference UIClick;
-    [SerializeField] private EventReference loopSurvival;
+    [SerializeField] private EventReference EndWaveFx;
+    [SerializeField] private StudioEventEmitter loopSurvivalEvent;
 
     public GameObject referenciaJugador;
 
@@ -70,8 +71,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        FMODUnity.RuntimeManager.PlayOneShot(loopSurvival);
         //TooltipScreenSpaceUI.showTooltip_static("Aqui probando el tooltis desde el GameMaster. GRAAAAANDE EL GAMEMASTER.");
+
+        loopSurvivalEvent.Play();
+
+        Application.runInBackground = true;
     }
 
     void Update()
@@ -141,6 +145,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("Juego Pausado");
 
         FMODUnity.RuntimeManager.PauseAllEvents(true);
+
+        //FMODUnity.RuntimeManager.StudioSystem.setParameterByName("VolumeMusic", 0.3f);
     }
 
     public void reanudarJuego()
@@ -153,9 +159,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Juego reanudado");
 
             FMODUnity.RuntimeManager.PauseAllEvents(false);
-
-                                                                                  //Value
-            FMODUnity.RuntimeManager.StudioSystem.setParameterByName("ParamName", 10f);
         }
     }
 
@@ -187,6 +190,8 @@ public class GameManager : MonoBehaviour
     public void gameOver()
     {
         cambiarEstadoActual(estadoDelJuego.GameOver);
+
+        loopSurvivalEvent.Stop();
     }
 
     public void mostrarPantallaFinal() 
@@ -241,6 +246,10 @@ public class GameManager : MonoBehaviour
         pi.enabled = false;
 
         tiempoCronoUI.text = "Tienda!";
+
+        loopSurvivalEvent.Stop();
+
+        FMODUnity.RuntimeManager.PlayOneShot(EndWaveFx);
     }
 
     public void finMenuTienda()
@@ -262,21 +271,9 @@ public class GameManager : MonoBehaviour
 
         FMODUnity.RuntimeManager.PlayOneShot(UIClick);
 
-    }
+        loopSurvivalEvent.Play();
 
-    /*
-    public void inicioMenuMejora()
-    {
-        cambiarEstadoActual(estadoDelJuego.Tienda);
-        referenciaJugador.SendMessage("EliminarOpcionesYAplicarMejoras");
     }
-    public void finMenuMejora()
-    {
-        mejorandoEquipamiento = false;
-        Time.timeScale = 1f;
-        menuTienda.SetActive(false);
-        cambiarEstadoActual(estadoDelJuego.Gameplay);
-    }*/
 
     public void exitGame()
     {

@@ -15,13 +15,14 @@ public class ComportamientoEnemigo1 : ComporamientoEnemigo
     // Update is called once per frame
     void Update()
     {
+        
         if(jugador.transform.position.x - transform.position.x > 0)
         {
             transform.localScale = new Vector2(-1, 1);
         }
         else
         {
-            transform.localScale = new Vector2(1, 1);
+           transform.localScale = new Vector2(1, 1);
         }
 
         transform.position = Vector2.MoveTowards(transform.position, jugador.transform.position, enemigo.rapidezActual * Time.deltaTime);

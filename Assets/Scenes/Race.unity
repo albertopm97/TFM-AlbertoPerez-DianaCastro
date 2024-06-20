@@ -2399,6 +2399,7 @@ GameObject:
   - component: {fileID: 1160078208}
   - component: {fileID: 1160078207}
   - component: {fileID: 1160078209}
+  - component: {fileID: 1160078210}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2460,7 +2461,7 @@ Transform:
   m_GameObject: {fileID: 1160078206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 636.1183, y: 431.88144, z: 6.504047}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2483,6 +2484,52 @@ MonoBehaviour:
   estadoDelJuegoPrevio: 0
   menuPausa: {fileID: 661271093}
   menuFinish: {fileID: 920806674}
+  winFx:
+    Guid:
+      Data1: 268267950
+      Data2: 1118178302
+      Data3: -1641955450
+      Data4: -1241428936
+    Path: event:/FX/Race/Win
+  gameOverFx:
+    Guid:
+      Data1: -669033178
+      Data2: 1341165650
+      Data3: 740446355
+      Data4: -511303352
+    Path: event:/FX/Race/GameOver
+  loopRaceEvent: {fileID: 1160078210}
+--- !u!114 &1160078210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160078206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1529307519
+      Data2: 1293247571
+      Data3: 1034656900
+      Data4: 444956947
+    Path: event:/Music/Race/RaceLoop
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1263021824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3158,7 +3205,7 @@ Transform:
   m_GameObject: {fileID: 1568723085}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.714792, y: 7.76, z: -10}
+  m_LocalPosition: {x: 12.714522, y: 7.76, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5121,6 +5168,7 @@ GameObject:
   - component: {fileID: 1743163474}
   - component: {fileID: 1743163476}
   - component: {fileID: 1743163477}
+  - component: {fileID: 1743163478}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Untagged
@@ -5242,6 +5290,7 @@ MonoBehaviour:
   carRb: {fileID: 1743163472}
   moveSpeed: 250
   rotationSpeed: 600
+  motorLoop: {fileID: 1743163478}
 --- !u!114 &1743163477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5295,11 +5344,46 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 06c5f4d1-1a2d-40b5-b97e-0ebb21fc8e9b
     m_ActionName: minigameSwing/LeftSwing[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 553b0717-4169-4a56-be2d-21b1248067a9
+    m_ActionName: Gachapon/pull[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MinigameRace
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1743163478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743163471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1282431862
+      Data2: 1233548259
+      Data3: 881570189
+      Data4: -1238007258
+    Path: event:/FX/Race/Motor
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1844505969
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,7 +6016,7 @@ Transform:
   m_GameObject: {fileID: 2099340466}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.714792, y: 7.76, z: -10}
+  m_LocalPosition: {x: 12.714522, y: 7.76, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1267,6 +1267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672165600}
   - component: {fileID: 672165599}
+  - component: {fileID: 672165601}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1304,18 +1305,19 @@ MonoBehaviour:
   tiempoCronoUI: {fileID: 1564136676}
   UIClick:
     Guid:
-      Data1: -296252071
-      Data2: 1226280183
-      Data3: -1140398953
-      Data4: 1823650843
+      Data1: 1337181952
+      Data2: 1260120651
+      Data3: 42763428
+      Data4: -399878197
     Path: event:/FX/UI/UIClick
-  loopSurvival:
+  EndWaveFx:
     Guid:
-      Data1: 1348918555
-      Data2: 1165815564
-      Data3: 2024593306
-      Data4: -946945210
-    Path: event:/Music/Survival/LoopSurvival
+      Data1: 1062470689
+      Data2: 1308051504
+      Data3: -1377640811
+      Data4: -921306734
+    Path: event:/FX/Survival/EndWave
+  loopSurvivalEvent: {fileID: 672165601}
   referenciaJugador: {fileID: 0}
 --- !u!4 &672165600
 Transform:
@@ -1326,12 +1328,43 @@ Transform:
   m_GameObject: {fileID: 672165598}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 478.2381, y: 296.02954, z: 3.5489037}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672165601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672165598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -2026682181
+      Data2: 1267357520
+      Data3: 1097225384
+      Data4: -2101401880
+    Path: event:/Music/Survival/LoopSurvival
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &732994253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,7 +1740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &813540637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2117,17 +2150,17 @@ MonoBehaviour:
   MonedasUI: {fileID: 1591632863}
   coinFx:
     Guid:
-      Data1: 1082269453
-      Data2: 1123611046
-      Data3: 102484656
-      Data4: -427891952
+      Data1: 1856206531
+      Data2: 1260514641
+      Data3: -1637807196
+      Data4: -341058847
     Path: event:/FX/Survival/Coin
   buyUpgradeFx:
     Guid:
-      Data1: 749597471
-      Data2: 1127556749
-      Data3: -87498831
-      Data4: -363319102
+      Data1: -1277060280
+      Data2: 1231454655
+      Data3: -1069172600
+      Data4: -468113327
     Path: event:/FX/Survival/BuyUpgrade
 --- !u!212 &944321077
 SpriteRenderer:
@@ -2346,7 +2379,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944321075}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f1f99467bc219f46a2f05dcd1733fab, type: 3}
   m_Name: 
@@ -2354,11 +2387,11 @@ MonoBehaviour:
   weaponStats: {fileID: 11400000, guid: 4ba70ef4189755047b37e3a28bddc3a5, type: 2}
   shootFx:
     Guid:
-      Data1: -391064632
-      Data2: 1141250080
-      Data3: -303722342
-      Data4: -3152281
-    Path: event:/FX/Survival/ShootFx
+      Data1: -447504772
+      Data2: 1149752239
+      Data3: -1870616694
+      Data4: 1373307147
+    Path: event:/FX/Survival/Shoot
   atack2: {fileID: 4943200807927871350, guid: fdc37690b7c85944f8f67defea899565, type: 3}
   atack3: {fileID: 4943200807927871350, guid: cdb534b3e9a428e45827b91c39cd067d, type: 3}
   atack4: {fileID: 4943200807927871350, guid: 7d298b96942fba74c9adb5e94cce0fff, type: 3}
@@ -3858,6 +3891,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 672165599}
+    - target: {fileID: 2967778392354476843, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: replyaSurvival
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967778392354476843, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3549955447314979837, guid: 3206417323ebc9841a225b681fd79706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

@@ -45,13 +45,6 @@ public class EstadisticasEnemigos : MonoBehaviour
         jugador = FindObjectOfType<EstadisticasJugador>().transform;
     }
 
-    void Update()
-    {
-        if(Vector2.Distance(transform.position, jugador.position) >= distanciaLimite)
-        {
-            recolocarEnemigo();
-        }
-    }
 
     public void recibirAtaque(float dmg)
     {
@@ -96,16 +89,6 @@ public class EstadisticasEnemigos : MonoBehaviour
         SpawnerEnemigos spawner = FindObjectOfType<SpawnerEnemigos>();
         if (spawner != null)
             spawner.OnEnemyKilled();
-    }
-
-    void recolocarEnemigo()
-    {
-        SpawnerEnemigos spawner = FindObjectOfType<SpawnerEnemigos>();
-        if(spawner != null)
-        {
-            transform.position = jugador.position + spawner.puntosSpawn[Random.Range(0, spawner.puntosSpawn.Count - 1)].position;
-        }
-        
     }
 
     public void SpawnEnd()

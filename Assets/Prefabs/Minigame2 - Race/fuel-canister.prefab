@@ -143,3 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e178f4ec29227384688764fa2a60f701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fuelFx:
+    Guid:
+      Data1: -1668912467
+      Data2: 1275743818
+      Data3: -348395854
+      Data4: -1601329935
+    Path: event:/FX/Race/Fuel

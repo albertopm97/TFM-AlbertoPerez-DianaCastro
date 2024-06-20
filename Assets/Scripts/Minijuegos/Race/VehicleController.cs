@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class VehicleController : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class VehicleController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
 
+    [Header("Sonido")]
+    [SerializeField] private StudioEventEmitter motorLoop;
+
     float horizontalInput;
+
+    bool loopPlaying;
 
     void Start()
     { 
@@ -40,6 +46,22 @@ public class VehicleController : MonoBehaviour
 
         //Only need horizontal move inout
         horizontalInput = movimientoInput.x;
+
+        if(horizontalInput != 0 && !loopPlaying) 
+        {
+            motorLoop.Play();
+
+            loopPlaying = true;
+
+            print("playing loop");
+        }
+
+        if(horizontalInput == 0)
+        {
+            motorLoop.Stop();
+
+            loopPlaying = false;
+        }
     }
 
     void move()
