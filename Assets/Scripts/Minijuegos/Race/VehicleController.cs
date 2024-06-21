@@ -75,7 +75,7 @@ public class VehicleController : MonoBehaviour
     {
         if (collision.tag == "Finish")
         {
-            Minigame2Manager.Instance.finish();
+            RaceGameManager.Instance.finish();
         }
     }
 }

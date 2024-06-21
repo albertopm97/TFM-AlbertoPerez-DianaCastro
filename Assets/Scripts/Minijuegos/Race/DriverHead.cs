@@ -8,7 +8,7 @@ public class DriverHead : MonoBehaviour
     {
         if(collision.gameObject.tag == "Ground")
         {
-            Minigame2Manager.Instance.gameOver();
+            RaceGameManager.Instance.gameOver();
         }
     }
 }

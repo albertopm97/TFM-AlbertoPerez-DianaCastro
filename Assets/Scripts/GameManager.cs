@@ -277,12 +277,23 @@ public class GameManager : MonoBehaviour
 
     public void exitGame()
     {
+        FMODUnity.RuntimeManager.PauseAllEvents(false);
+        loopSurvivalEvent.Stop();
         Application.Quit();
         Debug.Log("Leaving game...");
     }
 
     public void replyaSurvival()
     {
+        FMODUnity.RuntimeManager.PauseAllEvents(false);
+        loopSurvivalEvent.Stop();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void leaveArcade()
+    {
+        FMODUnity.RuntimeManager.PauseAllEvents(false);
+        loopSurvivalEvent.Stop();
+        SceneManager.LoadScene("Arcade");
     }
 }

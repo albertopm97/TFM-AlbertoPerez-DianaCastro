@@ -168,6 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3530106819079543290, guid: 33133f9b346c9234392ff65339036e53, type: 3}
+  shotFx:
+    Guid:
+      Data1: 1037906114
+      Data2: 1223478739
+      Data3: -18848084
+      Data4: 1031898342
+    Path: event:/FX/Minigames/FPS/Shot
 --- !u!1 &84603146
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +263,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 06c5f4d1-1a2d-40b5-b97e-0ebb21fc8e9b
     m_ActionName: minigameSwing/LeftSwing[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 553b0717-4169-4a56-be2d-21b1248067a9
+    m_ActionName: Gachapon/pull[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MinigameFPS
@@ -516,6 +527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 1250333108940037088, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1975846999833403818, guid: 3206417323ebc9841a225b681fd79706, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -596,10 +611,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2297722579659274789, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_text
+      value: Leave arcade
+      objectReference: {fileID: 0}
+    - target: {fileID: 2967778392354476843, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2028463099}
+    - target: {fileID: 2967778392354476843, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadNextMinigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2028463099}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: leaveArcade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Minigame2Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3511821096504740691, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344887138431520827, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 524.252
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344887138431520827, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8351134754054011039, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      propertyPath: m_text
+      value: Next game
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2278282924382380608, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1151797656}
   m_SourcePrefab: {fileID: 100100000, guid: 3206417323ebc9841a225b681fd79706, type: 3}
 --- !u!1 &486273041
 GameObject:
@@ -1031,8 +1101,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1061168059}
   - component: {fileID: 1061168058}
-  - component: {fileID: 1061168057}
   - component: {fileID: 1061168060}
+  - component: {fileID: 1061168061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1040,14 +1110,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1061168057
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1061168056}
-  m_Enabled: 1
 --- !u!20 &1061168058
 Camera:
   m_ObjectHideFlags: 0
@@ -1158,6 +1220,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1061168061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061168056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1071161186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1351,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1151797652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2278282924382380608, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+  m_PrefabInstance: {fileID: 331541438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1151797654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1388349542560528423, guid: 3206417323ebc9841a225b681fd79706, type: 3}
+  m_PrefabInstance: {fileID: 331541438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151797652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1151797656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151797652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 922555121a166be4b9081eae99a76bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalText: {fileID: 1151797654}
+  failFx:
+    Guid:
+      Data1: -669033178
+      Data2: 1341165650
+      Data3: 740446355
+      Data4: -511303352
+    Path: event:/FX/Race/GameOver
+  winFx:
+    Guid:
+      Data1: 268267950
+      Data2: 1118178302
+      Data3: -1641955450
+      Data4: -1241428936
+    Path: event:/FX/Race/Win
 --- !u!1001 &1309947104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1853,6 +1971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoCrono: 30
+  shotController: {fileID: 73475147}
 --- !u!1 &2028463098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1863,6 +1982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2028463100}
   - component: {fileID: 2028463099}
+  - component: {fileID: 2028463101}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1887,6 +2007,7 @@ MonoBehaviour:
   estadoDelJuegoPrevio: 0
   menuPausa: {fileID: 1792725928}
   menuFinish: {fileID: 1573853818}
+  loopGame: {fileID: 2028463101}
 --- !u!4 &2028463100
 Transform:
   m_ObjectHideFlags: 0
@@ -1902,6 +2023,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2028463101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028463098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1664350369
+      Data2: 1205202056
+      Data3: 1906145153
+      Data4: -702011395
+    Path: event:/Music/Minigames/MinigamesLoop
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &2135687108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1910,6 +2062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1906854091}
     m_Modifications:
+    - target: {fileID: 3923264639500488357, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_text
+      value: Leave arcade
+      objectReference: {fileID: 0}
     - target: {fileID: 6278121242837637178, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2002,6 +2158,34 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2028463099}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2028463099}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: leaveArcade
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Minigame2Manager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8838064546042196844, guid: 79457b9d849a11344a88705a3c79c7d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

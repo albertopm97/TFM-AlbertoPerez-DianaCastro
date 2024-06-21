@@ -22,6 +22,8 @@ public class Minigame1PlayerController : MonoBehaviour
     [Header("Sonido")]
     //FMOD
     [SerializeField] private EventReference jumpFx;
+    [SerializeField] private EventReference failFx;
+    [SerializeField] private EventReference winFx;
 
 
 
@@ -89,6 +91,8 @@ public class Minigame1PlayerController : MonoBehaviour
 
             enterHole.SetActive(true);
 
+            FMODUnity.RuntimeManager.PlayOneShot(winFx);
+
             Minigame2Manager.Instance.finish();
         }
 
@@ -104,6 +108,8 @@ public class Minigame1PlayerController : MonoBehaviour
             rb.velocity = Vector3.zero;
 
             rb.gravityScale = 0f;
+
+            FMODUnity.RuntimeManager.PlayOneShot(failFx);
 
             Minigame2Manager.Instance.gameOver();
         }

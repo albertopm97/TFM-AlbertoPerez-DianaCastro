@@ -2,6 +2,8 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class PlayerSwingController : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class PlayerSwingController : MonoBehaviour
     public float swingForce;
     public Animator animator;
     public CinemachineVirtualCamera vc;
+
+    [SerializeField] private EventReference jumpFx;
 
     void Start()
     {
@@ -70,9 +74,13 @@ public class PlayerSwingController : MonoBehaviour
 
             vc.Follow = this.transform;
 
+            this.gameObject.GetComponent<PlayerInput>().enabled = false;
+
             animator.SetBool("inAir", true);
 
             Invoke("enableCollider", 1f);
+
+            FMODUnity.RuntimeManager.PlayOneShot(jumpFx);
         }
         
     }

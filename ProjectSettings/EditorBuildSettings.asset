@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Arcade.unity
+    guid: 995d870e8e9c93b4bbe8621c182a58cd
+  - enabled: 1
     path: Assets/Scenes/Survival.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/AulaClub.unity
+    guid: 3cafa99397282b443999d7a7a7edd200
+  - enabled: 1
+    path: Assets/Scenes/FPS.unity
+    guid: 25983c7fe04640b40a41c08e320b2049
+  - enabled: 1
+    path: Assets/Scenes/Gachapon.unity
+    guid: 233987bbdd3545843a5670c95c498310
+  - enabled: 1
+    path: Assets/Scenes/Jump.unity
+    guid: 402183e9337556b479375a336aa3f941
+  - enabled: 1
+    path: Assets/Scenes/Race.unity
+    guid: a0ab4b3929da1024e96b5ebb736bbddb
+  - enabled: 1
+    path: Assets/Scenes/VineSwing.unity
+    guid: 562f5860bb65ade488ae8e545f60f2a9
   m_configObjects: {}

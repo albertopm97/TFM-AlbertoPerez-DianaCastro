@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 using static GameManager;
 using FMODUnity; //Para FMOD
 
-public class Minigame2Manager : MonoBehaviour
+public class RaceGameManager : MonoBehaviour
 {
-    public static Minigame2Manager Instance;
+    public static RaceGameManager Instance;
 
     public enum estadoDelJuego
     {
@@ -25,7 +25,9 @@ public class Minigame2Manager : MonoBehaviour
 
     [Header("Sonido")]
     //FMOD
-    [SerializeField] private StudioEventEmitter loopGame;
+    [SerializeField] private EventReference winFx;
+    [SerializeField] private EventReference gameOverFx;
+    [SerializeField] private StudioEventEmitter loopRaceEvent;
 
     private void Awake()
     {
@@ -45,7 +47,7 @@ public class Minigame2Manager : MonoBehaviour
 
     private void Start()
     {
-        loopGame.Play();
+        loopRaceEvent.Play();
     }
 
     void Update()
@@ -55,11 +57,16 @@ public class Minigame2Manager : MonoBehaviour
             case estadoDelJuego.Gameplay:
 
                 comprobadorPausa();
+                /*if (!loopJuego.isPlaying)
+                {
+                    loopJuego.Play();
+                }*/
                 break;
 
             case estadoDelJuego.Pausa:
 
                 comprobadorPausa();
+                //loopJuego.Pause();
                 break;
 
             case estadoDelJuego.GameOver:
@@ -70,7 +77,8 @@ public class Minigame2Manager : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("FIN DEL JUEGO");
                     mostrarPantallaGameOver();
-                    loopGame.Stop();
+                    loopRaceEvent.Stop();
+                    FMODUnity.RuntimeManager.PlayOneShot(gameOverFx);
                 }
                 break;
 
@@ -82,7 +90,8 @@ public class Minigame2Manager : MonoBehaviour
                     Time.timeScale = 0f;
                     Debug.Log("FIN DEL JUEGO");
                     mostrarPantallaVictoria();
-                    loopGame.Stop();
+                    loopRaceEvent.Stop();
+                    FMODUnity.RuntimeManager.PlayOneShot(winFx);
                 }
                 break;
 
@@ -170,39 +179,18 @@ public class Minigame2Manager : MonoBehaviour
         menuFinish.SetActive(true);
     }
 
-    public void leaveArcade()
-    {
-        loopGame.Stop();
-        FMODUnity.RuntimeManager.PauseAllEvents(false);
-        SceneManager.LoadScene("Arcade");
-    }
-
     public void exit()
     {
-        loopGame.Stop();
+        loopRaceEvent.Stop();
         FMODUnity.RuntimeManager.PauseAllEvents(false);
         Application.Quit();
         Debug.Log("Leaving app....");
     }
 
-    public void loadNextMinigame()
+    public void leaveArcade()
     {
-        List<string> scenesList = new List<string>();
-
-        scenesList.Add("FPS");
-        scenesList.Add("Jump");
-        scenesList.Add("VineSwing");
-
-        string actualScene = SceneManager.GetActiveScene().name;
-
-        scenesList.Remove(actualScene);
-
-        string nextScene = scenesList[Random.Range(0, scenesList.Count)];
-
-        loopGame.Stop();
-
+        loopRaceEvent.Stop();
         FMODUnity.RuntimeManager.PauseAllEvents(false);
-
-        SceneManager.LoadScene(nextScene);
+        SceneManager.LoadScene("Arcade");
     }
 }

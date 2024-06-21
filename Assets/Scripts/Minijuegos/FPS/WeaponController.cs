@@ -15,7 +15,7 @@ public class WeaponController : MonoBehaviour
     Vector3 direction;
 
     public controllerType controller;
-    
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();

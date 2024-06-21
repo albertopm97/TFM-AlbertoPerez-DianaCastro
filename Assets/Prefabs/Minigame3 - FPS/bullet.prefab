@@ -100,6 +100,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 40
   damage: 20
+  targetHitFx:
+    Guid:
+      Data1: -666284082
+      Data2: 1284088586
+      Data3: -653042547
+      Data4: -580920577
+    Path: event:/FX/Minigames/FPS/TargetHit
 --- !u!61 &9031944334426313796
 BoxCollider2D:
   m_ObjectHideFlags: 0
