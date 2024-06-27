@@ -121,7 +121,7 @@ public class SpawnerEnemigos : MonoBehaviour
                     //grupo.prefabEnemigo.GetComponent<ComporamientoEnemigo>().jugador = jugador;
 
                     //elegimos un punto al azar de la lista de puntos y spawneamos al enemigo ahí
-                    Instantiate(grupo.prefabEnemigo, jugador.position + puntosSpawn[Random.Range(0, puntosSpawn.Count - 1)].position, Quaternion.identity);
+                    Instantiate(grupo.prefabEnemigo, puntosSpawn[Random.Range(0, puntosSpawn.Count - 1)].transform.position, Quaternion.identity);
 
                     grupo.contadorSpawn++;
                     waves[waveActual].contadorSpawn++;
