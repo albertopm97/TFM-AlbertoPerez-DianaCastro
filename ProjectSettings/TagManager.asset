@@ -12,6 +12,7 @@ TagManager:
   - Survival
   - Racing
   - Minigames
+  - Arcade
   layers:
   - Default
   - TransparentFX

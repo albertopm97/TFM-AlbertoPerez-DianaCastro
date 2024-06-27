@@ -36,7 +36,14 @@ public class ArcadeController : MonoBehaviour
             GameToLoad = 3;
         }
 
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Arcade")
+        {
+            keySprite.SetActive(true);
+            GameToLoad = 4;
+            print("Arcade a cargar" + GameToLoad);
+        }
+
+        if (collision.gameObject.tag == "Ground")
         {
             keySprite.SetActive(false);
             GameToLoad = 0;
@@ -45,6 +52,9 @@ public class ArcadeController : MonoBehaviour
 
     public void loadGame()
     {
+
+        ArcadeGameManager.Instance.stopMusic();
+
         switch (GameToLoad)
         {
             case 0:
@@ -76,6 +86,10 @@ public class ArcadeController : MonoBehaviour
                         break;
                 }
                 break;
+
+                case 4:
+                    SceneManager.LoadScene("Arcade");
+                    break;
 
             default:
                 break;
