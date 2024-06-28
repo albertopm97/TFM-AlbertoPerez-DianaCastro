@@ -54,3 +54,13 @@ MonoBehaviour:
   velocidadAtaque: {fileID: 21300000, guid: 1c7df8100b7ed814a96d9d30790defb3, type: 3}
   penetracion: {fileID: 21300000, guid: 3bb3011bd52ff914cbada3e8de971be6, type: 3}
   dinero: {fileID: 21300000, guid: a7b75394342f9ca4dba0dd6048eed1c1, type: 3}
+  TeddyBear: {fileID: 21300000, guid: 65d9c793939b5f940bcbbcaecae04c7f, type: 3}
+  StarSticker: {fileID: 21300000, guid: f939fa71ff39e8440926966c6eebd08d, type: 3}
+  RacingWolfSticker: {fileID: 21300000, guid: 0eaeac9640921e149a807cd51f4a31c3, type: 3}
+  GhostSticker: {fileID: 21300000, guid: 3bfe3cb3b608c144fa6b07f7a17aa20d, type: 3}
+  OldConsole: {fileID: 21300000, guid: 7d4c99c117677b3478d683cbd215cb20, type: 3}
+  MageFigurine: {fileID: 21300000, guid: a04eb5e05ca3fba40b6a579639fc1d05, type: 3}
+  FoxyHeroFigurine: {fileID: 21300000, guid: b2f0dfd05bb8470478f5c074f43a2740, type: 3}
+  ElPerroFigurine: {fileID: 21300000, guid: 850b95296bc45344a91c70a4339ba876, type: 3}
+  KatyCat: {fileID: 21300000, guid: 910c97f29cf768842a76c297d0beb5a8, type: 3}
+  BunnyStressToy: {fileID: 21300000, guid: f6128575b975d0a41886cb29479fd352, type: 3}

@@ -42,16 +42,19 @@ public class EndGameScreenText : MonoBehaviour
         {
             textMeshProUGUI.text = "NICE JUMP!";
             FMODUnity.RuntimeManager.PlayOneShot(goodFx);
+            GachaTicketManager.instance.addTicket();
         }
         else if (distance > 60 && distance <= 80)
         {
             textMeshProUGUI.text = "EXCELLENT JUMP!";
             FMODUnity.RuntimeManager.PlayOneShot(goodFx);
+            GachaTicketManager.instance.addTicket();
         }
         else if (distance > 80)
         {
             textMeshProUGUI.text = "BRUTAL JUMP!";
             FMODUnity.RuntimeManager.PlayOneShot(goodFx);
+            GachaTicketManager.instance.addTicket();
         }
     }
 }

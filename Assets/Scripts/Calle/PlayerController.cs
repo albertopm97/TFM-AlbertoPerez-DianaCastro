@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 movimientoInput = Vector2.zero;
 
+
+    public bool hablando;
+
     void Start()
     {
         //Al inicio almacenamos en la variable el componente RigidBody2D del jugador
@@ -46,6 +49,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (hablando)
+        {
+            playerInput.enabled = false;
+        }
+        else
+        {
+            playerInput.enabled = true;
+        }
 
         GestionInput();
 
@@ -166,6 +177,19 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("Walking", false);
+        }
+    }
+
+    public void hablar()
+    {
+        if (!hablando)
+        {
+            print("Hablando...");
+            hablando = true;
+        }
+        else
+        {
+            hablando = false;
         }
     }
 }

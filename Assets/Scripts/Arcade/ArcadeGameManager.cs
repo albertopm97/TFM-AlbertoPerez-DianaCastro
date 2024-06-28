@@ -9,8 +9,6 @@ public class ArcadeGameManager : MonoBehaviour
 {
     public static ArcadeGameManager Instance;
 
-    public GameObject ticketManger;
-
     public enum estadoDelJuego
     {
         Gameplay, Pausa
@@ -25,8 +23,10 @@ public class ArcadeGameManager : MonoBehaviour
 
     [Header("Sonido")]
     //FMOD
-    [SerializeField] private StudioEventEmitter loopGame;
+    [SerializeField] public StudioEventEmitter loopGame;
     [SerializeField] private StudioEventEmitter AmbienceFx;
+
+    private bool playingloop;
 
     private void Awake()
     {
@@ -46,14 +46,16 @@ public class ArcadeGameManager : MonoBehaviour
 
     private void Start()
     {
-        loopGame.Play();
+        if(!playingloop)
+        {
+            playingloop = true;
+            loopGame.Play();
+        }
 
         if(AmbienceFx != null)
         {
             AmbienceFx.Play();
         }
-
-        DontDestroyOnLoad(ticketManger);
     }
 
     void Update()
@@ -132,6 +134,7 @@ public class ArcadeGameManager : MonoBehaviour
     public void exit()
     {
         loopGame.Stop();
+        playingloop = false;
         if (AmbienceFx != null)
         {
             AmbienceFx.Stop();
@@ -144,6 +147,7 @@ public class ArcadeGameManager : MonoBehaviour
     public void stopMusic()
     {
         loopGame.Stop();
+        playingloop = false;
         if (AmbienceFx != null)
         {
             AmbienceFx.Stop();

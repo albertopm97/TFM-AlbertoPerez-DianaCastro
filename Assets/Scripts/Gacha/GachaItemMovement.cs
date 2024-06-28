@@ -28,6 +28,11 @@ public class GachaItemMovement : MonoBehaviour
         pulled = true;
     }
 
+    public void stopMoving()
+    {
+        pulled = false;
+    }
+
     public IEnumerator moveItem()
     {
         Vector3 randomDir = new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0f);

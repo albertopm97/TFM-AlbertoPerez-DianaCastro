@@ -92,6 +92,7 @@ public class RaceGameManager : MonoBehaviour
                     mostrarPantallaVictoria();
                     loopRaceEvent.Stop();
                     FMODUnity.RuntimeManager.PlayOneShot(winFx);
+                    GachaTicketManager.instance.addTicket();
                 }
                 break;
 

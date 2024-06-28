@@ -93,6 +93,8 @@ public class Minigame1PlayerController : MonoBehaviour
 
             FMODUnity.RuntimeManager.PlayOneShot(winFx);
 
+            GachaTicketManager.instance.addTicket();
+
             Minigame2Manager.Instance.finish();
         }
 

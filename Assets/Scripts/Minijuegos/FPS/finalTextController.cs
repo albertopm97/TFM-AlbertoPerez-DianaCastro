@@ -18,6 +18,7 @@ public class finalTextController : MonoBehaviour
         {
             FMODUnity.RuntimeManager.PlayOneShot(winFx);
             finalText.text = "Nice Shot";
+            GachaTicketManager.instance.addTicket();
         }
         else
         {

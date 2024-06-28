@@ -69,11 +69,35 @@ public class MovimientoJugador : MonoBehaviour
         //cambiamos escala a negativa si vamos en direccion derecha
         if (rb.velocity.x > 0)
         {
+            if (barravida != null)
+            {
+                // Desvincula el objeto hijo del padre
+                barravida.transform.SetParent(null);
+            }
+
             transform.localScale = new Vector2(-1, 1);
+
+            if (barravida != null)
+            {
+                // Desvincula el objeto hijo del padre
+                barravida.transform.SetParent(this.transform);
+            }
         }
         else if (rb.velocity.x < 0) //Si nos movemos a la izquierda, cambiamos la escala a negativo para invertir el prota (con todos sus componentes)
         {
+            if (barravida != null)
+            {
+                // Desvincula el objeto hijo del padre
+                barravida.transform.SetParent(null);
+            }
+
             transform.localScale = new Vector2(1, 1);
+
+            if (barravida != null)
+            {
+                // Desvincula el objeto hijo del padre
+                barravida.transform.SetParent(this.transform);
+            }
         }
     }
 

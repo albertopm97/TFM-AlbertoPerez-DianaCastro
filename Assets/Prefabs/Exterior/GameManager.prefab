@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 282a0be95754e404e93d54d9e68405d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ticketManger: {fileID: 0}
   estadoDelJuegoActual: 0
   estadoDelJuegoPrevio: 0
   menuPausa: {fileID: 0}

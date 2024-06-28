@@ -13,6 +13,8 @@ TagManager:
   - Racing
   - Minigames
   - Arcade
+  - Gacha
+  - Aula
   layers:
   - Default
   - TransparentFX

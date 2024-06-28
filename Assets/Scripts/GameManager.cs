@@ -11,6 +11,8 @@ using FMODUnity; //Para FMOD
 
 public class GameManager : MonoBehaviour
 {
+    private int wavesForTicketCount = 2;
+
     public static GameManager instancia;
 
     public GameObject firstButtonPause;
@@ -250,6 +252,15 @@ public class GameManager : MonoBehaviour
         loopSurvivalEvent.Stop();
 
         FMODUnity.RuntimeManager.PlayOneShot(EndWaveFx);
+
+        wavesForTicketCount--;
+
+        if(wavesForTicketCount == 0 ) 
+        {    
+            GachaTicketManager.instance.addTicket();
+
+            wavesForTicketCount = 2;
+        }
     }
 
     public void finMenuTienda()

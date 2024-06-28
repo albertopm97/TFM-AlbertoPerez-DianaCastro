@@ -40,7 +40,7 @@ public class FuelController : MonoBehaviour
 
         if(currentFuel <= 0)
         {
-            Minigame2Manager.Instance.gameOver();
+            RaceGameManager.Instance.gameOver();
         }
     }
 

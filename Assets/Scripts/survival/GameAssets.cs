@@ -28,4 +28,18 @@ public class GameAssets : MonoBehaviour
 
     [Header("Sprites interfaz")]
     public Sprite dinero;
+
+    [Header("Decoraciones")]
+    public Sprite TeddyBear;
+    public Sprite StarSticker;
+    public Sprite RacingWolfSticker;
+    public Sprite GhostSticker;
+    public Sprite OldConsole;
+    public Sprite MageFigurine;
+    public Sprite FoxyHeroFigurine;
+    public Sprite ElPerroFigurine;
+    public Sprite KatyCat;
+    public Sprite BunnyStressToy;
+
+
 }
