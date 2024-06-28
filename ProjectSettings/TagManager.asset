@@ -47,6 +47,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: suelo
+    uniqueID: 3634354203
+    locked: 0
+  - name: back
+    uniqueID: 1031665497
+    locked: 0
+  - name: front
+    uniqueID: 3010895225
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Mia
+    uniqueID: 1785319213
+    locked: 0
+  - name: pared
+    uniqueID: 4151347429
     locked: 0

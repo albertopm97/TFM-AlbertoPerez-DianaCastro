@@ -35,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -3.1740398, y: 5.3201, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3184796614928808300}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8859601340452421798
@@ -233,3 +234,99 @@ MonoBehaviour:
   - nombre: moneda1
     itemPrefab: {fileID: 6135898768387338088, guid: ef3dea45be8692841836618959497483, type: 3}
     probabilidad: 100
+--- !u!1 &8735650345319097295
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3184796614928808300}
+  - component: {fileID: 7005178168341671583}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3184796614928808300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735650345319097295}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.05, y: 0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1293468683906373381}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7005178168341671583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8735650345319097295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.31050324, g: 1, b: 0, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 1bd89fd859f77d3d799d76b3000000002dcf696ae58870f7
+  m_LightCookieSprite: {fileID: 21300000, guid: 119f93d0bcbf1e743bf5fcf237507d39, type: 3}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: -0.039499998, y: -0.00999999, z: 0}
+    m_Extent: {x: 1.6716, y: 1.648, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -1.1719046, y: 0.46306276, z: 0}
+  - {x: -1.2094283, y: 0.044794083, z: 0}
+  - {x: -1.1198406, y: -0.44793606, z: 0}
+  - {x: -0.8286824, y: -0.851079, z: 0}
+  - {x: -0.40314245, y: -1.075047, z: 0}
+  - {x: 0.08958721, y: -1.1646342, z: 0}
+  - {x: 0.649508, y: -1.1198406, z: 0}
+  - {x: 1.0078568, y: -0.8062854, z: 0}
+  - {x: 1.1422381, y: -0.44793606, z: 0}
+  - {x: 0.8062854, y: -0.5599203, z: 0}
+  - {x: 0.4552064, y: -0.4328096, z: 0}
+  - {x: 0.47033358, y: 0.022397041, z: 0}
+  - {x: 0.40314293, y: 0.42553997, z: 0}
+  - {x: 0.2687621, y: 0.8286824, z: 0}
+  - {x: -0.03752327, y: 1.0599203, z: 0}
+  - {x: -0.40314245, y: 1.1422381, z: 0}
+  - {x: -0.7463651, y: 1.0823174, z: 0}
+  - {x: -1.0078568, y: 0.8286824, z: 0}
