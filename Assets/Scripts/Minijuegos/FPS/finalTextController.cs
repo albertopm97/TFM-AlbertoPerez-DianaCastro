@@ -23,7 +23,7 @@ public class finalTextController : MonoBehaviour
         else
         {
             FMODUnity.RuntimeManager.PlayOneShot(failFx);
-            finalText.text = "Bud Luck!";
+            finalText.text = "Bad Luck!";
         }
     }
 }

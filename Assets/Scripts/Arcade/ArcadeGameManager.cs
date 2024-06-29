@@ -49,7 +49,12 @@ public class ArcadeGameManager : MonoBehaviour
         if(!playingloop)
         {
             playingloop = true;
-            loopGame.Play();
+
+            if(loopGame != null)
+            {
+                loopGame.Play();
+            }
+            
         }
 
         if(AmbienceFx != null)

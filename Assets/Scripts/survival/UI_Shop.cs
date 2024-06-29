@@ -256,6 +256,7 @@ public class UI_Shop : MonoBehaviour
         if(jugador.monedas >= 10)
         {
             jugador.monedas -= 10;
+            jugador.actualizarMonedasUI();
             generarMenu();
         }
         else

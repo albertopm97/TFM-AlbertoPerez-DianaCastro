@@ -10,7 +10,6 @@ public class GachaTicketManager : MonoBehaviour
     public static GachaTicketManager instance;
 
     public int numTickets;
-    public TextMeshProUGUI TiquetCountUI;
 
 private bool saved;
 
@@ -37,14 +36,18 @@ private bool saved;
     {
         numTickets++;
 
-        TiquetCountUI.text = numTickets.ToString();
+        GameObject TextUI = GameObject.FindGameObjectWithTag("TicketText");
+
+        TextUI.GetComponent<TextMeshProUGUI>().text = numTickets.ToString();
     }
 
     public void removeTicket()
     {
         numTickets--;
 
-        TiquetCountUI.text = numTickets.ToString();
+        GameObject TextUI = GameObject.FindGameObjectWithTag("TicketText");
+
+        TextUI.GetComponent<TextMeshProUGUI>().text = numTickets.ToString();
 
         print("Quitando tiquet");
     }

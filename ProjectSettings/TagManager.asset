@@ -15,6 +15,7 @@ TagManager:
   - Arcade
   - Gacha
   - Aula
+  - TicketText
   layers:
   - Default
   - TransparentFX
